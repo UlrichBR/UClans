@@ -966,6 +966,26 @@ Commands:
             extra:
               volume: 10
               pitch: 1
+      expand:
+        permission: 'uclans.admin.expand'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'expand'
+        show:
+            on_help: ' &5/uclan expand &7-&e Expands the set values.'
+            on_help_json:
+              hover_text: '&aClick to Expands the set values.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan expand'
+            on_success: '%tag% &aYou have expanded the region.'
+            on_error: '%tag% &cError, use &5/uclan expand <VALUE> <VALUE>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
       clearwand:
         permission: 'uclans.admin.clearwand'
         no_permission_message: '%tag% &cYou dont have permission for this.'
