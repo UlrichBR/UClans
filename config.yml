@@ -31,6 +31,15 @@ Plugin:
   check-for-updates: true
   use-metrics: true
 
+###### About bungeecord mode #####
+# The bungeecord mode synchronizes user data at a high frequency, so if you don't use the 
+#same database on multiple servers, leave this "false" to save memory.
+# Remember, if you don't use bungeecord mode, use different databases for each server.
+# Holograms are not synchronized.
+###### About bungeecord mode #####
+
+Bungeecord: false
+
 Config:
   tag: '&6&lU&a&lClans &8>>'
   date-format: 'dd/MM/yyyy HH:mm'
