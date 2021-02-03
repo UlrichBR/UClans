@@ -36,9 +36,12 @@ Plugin:
 #same database on multiple servers, leave this "false" to save memory.
 # Remember, if you don't use bungeecord mode, use different databases for each server.
 # Holograms are not synchronized.
+#Clan bases are not yet being separated
+#The 'server' needs to be unique for each minigame and if it is blank the bungeecord mode is turned off.
 ###### About bungeecord mode #####
 
 Bungeecord: false
+server: ''
 
 Config:
   tag: '&6&lU&a&lClans &8>>'
@@ -102,11 +105,11 @@ Gui:
   noclan: 'index_noclan'
 
 Clan:
-  disabled_command_worlds:
+  disabled_command_worlds: #Worlds where clan commands are disabled between members of the same clan.
   - 'disabled_worlds'
-  forced_ff_worlds:
+  forced_ff_worlds: #Worlds where friendly fire is always active between members of the same clan.
   - 'disabled_worlds'
-  forced_ff_regions:
+  forced_ff_regions: #Regions where friendly fire is always active between members of the same clan.
   - 'worlds'
   invite:
     max_time_seconds: 60 #IN SECONDS
