@@ -11,7 +11,16 @@ Storage:
     player_table: 'uclans-players'
     holograms_table: 'uclans-holos'
     bases_table: 'uclans-bases'
+    sync_table: 'uclans-sync'
   tables:
+    uclans-sync:
+      id: 'u_id'
+      tag: 'u_tag'
+      name: 'u_name'
+      text: 'u_text'
+      read: 'u_read'
+      playerread: 'u_playerread'
+      date: 'u_date'
     uclans-clans:
       id: 'u_id'
       tag: 'u_tag'
