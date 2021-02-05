@@ -41,7 +41,7 @@ Plugin:
 ###### About bungeecord mode #####
 
 Bungeecord: false
-server: ''
+Server: ''
 
 Config:
   tag: '&6&lU&a&lClans &8>>'
