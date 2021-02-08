@@ -30,6 +30,11 @@ Gui:
         right-action:
         - '[closegui]'
         - '[player] /clan create'
+        nbt: #This can be used on all items in this file, To not use just erase this part.
+          string:
+          - 'NbtExample:teste'
+          int:
+          - 'NbtExample2:0001'
       commands:
         sound-click: ''
         itemstack: 'PAPER'
