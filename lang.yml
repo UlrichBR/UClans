@@ -1,0 +1,158 @@
+tag: '&6&lU&a&lClans &8>>'
+command by player: '%tag% &cThis command must be used by a player.'
+empty chat help: '%tag% &cError, Use &b/. <message>'
+disabled world command: '%tag% &cClan commands are turned off in this world.'
+error start action: '%tag% &cThere was an error running this.'
+error character: '%tag% &cThis contains invalid characters.'
+error mod desc: '%tag% &cError changing the Clan description.'
+has globalff: '%tag% &eGlobal friendly fire is now on!'
+check wand: '%tag% &cYou need to mark the points before creating the region.'
+region marked point: '%tag% &ePoint &b#%point_number% &ewas scored in &b%location%'
+no permission: '%tag% &cYou do not have permission'
+region list header: '&d&lList of regions:'
+region list empty: '&8 - There are no saved regions'
+region list format: ' &b%region_name% &7- %region_creator% &7- &b%region_firstpoint%&7/&b%region_secondpoint%'
+region not exists: '%tag% &cThere is no region with this name.'
+region exists: '%tag% &cThere is already a region with this name.'
+hologram not found: '%tag% &cThis hologram does not exist'
+hologram header: '&d&lList of Holograms:'
+hologram format checked: ' &7&m%num%° &8&m- &7&m%id%&r &a&lOK'
+hologram format unchecked: ' &a%num%° &7- &b%id% &7- &b%location% &8(%world%&8)'
+hologram empty: ' &cNo status to show.'
+hologram footer: ''
+hologram wait: ' &ewait....'
+hologram disabled: '%tag% &cHolograms are off.'
+tag in use: '%tag% &cThis Tag is already in use.'
+clan not found: '%tag% &cClan with this TAG does not exist.'
+clan ally header: '&d&lList of Allies. &8(tag/kdr/members)'
+clan list empty: ' &cNo Clan in this list.'
+clan is your clan: '%tag% &cThis is your Clan.'
+clan is rival: '%tag% &cThis Clan is already an ally.'
+clan already ally: '%tag% &cThis Clan is already an ally.'
+clan dont ally: '%tag% &cThis Clan is not an ally.'
+clan player isnot your clan: '%tag% &cThis player is not in your Clan.'
+clan dont have home: '%tag% &cYour Clan does not have a set home.'
+clan max members: '&cThis Clan already has the maximum number of players.'
+clan player kicked out: '%tag% &eYou have been kicked out of the clan &b%clan% &cby &a%clan_leader%'
+clan player kicked outby: '%tag% &4%player% &ehas been kicked out of the clan by &a%clan_leader%'
+clan tag equals: 'tag% &cUnchanged TAG, appears to be the same.'
+clan name equals: '%tag% &cUnchanged NAME, appears to be the same.'
+clan already rival: '%tag% &cThis Clan is already a rival.'
+clan is ally: '%tag% &cThis Clan is already an ally.'
+clan rival error add: '%tag% &cError adding rival.'
+clan rival error remove: '%tag% &cError removing rival.'
+clan dont rival: '%tag% &cThis Clan is not a rival.'
+clan new ally: '%tag% &c&l! &eA new alliance was formed with the clan &a%clan_tag%'
+clan removed ally: '%tag% &c&l! &eThe alliance with the clan &a%clan_tag% &ehas removed.'
+clan created: '%tag% &c&l! &eA new Clan &b%clan_tag% &ewas created by &a%player%.'
+clan deleted: '%tag% &c&l! &eThe Clan &b%clan_tag% &ewas deleted by &a%player%.'
+clan deleted small: '&c&mDeleted'
+clan ff changed: '%tag% &c&l! &eThe friendly fire is &b%value%.'
+clan globalff changed: '%tag% &c&l! &eGlobal friendly fire is &b%value%.'
+clan new join: '%tag% &c&l! &eThe player &a%player% &eentered the Clan.'
+clan new kick: '%tag% &c&l! &eThe player &a%player% &ewas expelled from the Clan.'
+clan new rival: '%tag% &c&l! &eNew rivalry with the Clan &a%clan_tag%'
+clan rival removed: '%tag% &c&l! &eThe rivalry with the Clan &a%clan_tag% &ewas undone.'
+clan verify changed: '%tag% &c&l! &eThe clan was changed to &a%value%.'
+clan new promote: '%tag% &c&l! &eThe player &a%player% &egot promoted.'
+clan new demote: '%tag% &c&l! &cThe player &a%player% &ewas demoted.'
+clan pvp disabled: '%tag% &cClan PVP is now turned off.'
+action removed: '%tag% &cAll actions have been deleted.'
+action disband error: '%tag% &cYou did not enter a confirmation and the action was canceled!'
+error action remove: '%tag% &cError removing actions.'
+help uclan header: '&4&lAdmin Clan Help:'
+help clan header: '&d&lHelp with Clan:'
+help info header: '&d&lClan Information &8%clan_tag%&d&l:'
+help info empty: '&cNothing here'
+help clanlist: '&d&lList of Clans: &8(rank/tag/desc/kdr/members)'
+help clanlist subheader: ' &8Showing %cur%/%amount% of %total% (Page: %pag_cur%/%pag_max%)'
+help profile header: '&d&lProfile of &a%player%&d&l:'
+joinRequireRegisterChat: |
+  &7Tag: &b%clan_tag%
+  &7Tag: &b%clan_tag% 
+  &7Name: &b%clan_name%
+  &7Desc: &b%clan_desc%
+  &7Leader: &b%clan_leader%
+  &7Creation date: &b%clan_creation_date%
+  &7Verified: &b%clan_verified%
+  &7Kdr: &b%clan_kills%&8/&b%clan_deaths% &8(%clan_kdr%)
+  &7Members: &b%clan_members%
+  &7Allies: &b%clan_ally%
+  &7Rivais: &b%clan_rival%
+
+help info format: |
+  &7Tag: &b%clan_tag%
+  &7Name: &b%clan_name%
+  &7Desc: &b%clan_desc% 
+  &7Leader: &b%clan_leader%
+  &7Creation date: &b%clan_creation_date%
+  &7Verified: &b%clan_verified%
+  &7Kdr: &b%clan_kills%&8/&b%clan_deaths% &8(%clan_kdr%) 
+  &7Members: &b%clan_members%
+  &7Allies: &b%clan_ally%
+  &7Rivais: &b%clan_rival%
+
+help profile format: |
+  &7Name: &b%player_name%
+  &7Clan: &b%clan_tag%
+  &7Clan leader: &b%clan_leader%
+  &7Kdr: &b%player_kills%&8/&b%player_deaths% &8(%player_kdr%) 
+  &7Entry into: &b%player_join_date%
+  &7Last Seen: &b%player_seen_date%
+help stats format: |
+  &7Tag: &b%clan_tag%
+  &7Creation date: &b%clan_creation_date%
+  &7Verified: &b%clan_verified%
+  &7Clan Kdr: &b%clan_kills%&8/&b%clan_deaths% &8(%clan_kdr%)
+  &7Members:
+
+help rival header: '&d&lList of Rivals. &8(tag/kdr/members)'
+help stats header: '&d&lClan Status &a%clan_tag%&d&l:'
+help stats format player: '  &7&a%list_player% &7- &b%list_player_role% &7- &b%list_player_kills%&8/&b%list_player_deaths% &8(%list_player_kdr%) &7[%list_player_seen_date%]'
+translaction players: 'players'
+translaction is on: '&a&lOnline'
+translaction is off: '&c&lOffline'
+translaction yes: '&b&lYES'
+translaction no: '&c&lNO'
+invite invite: '%tag% &eHas invited &a%invited%&e. &8(%invalid% invalid)'
+invite offline: ' &7 - Offlines: &c%offline%'
+invite hasclan: ' &7 - Has Clan: &c%hasclan%'
+clan dont leader: '%tag% &cYou are not the leader of the Clan.'
+clan dont permission top demote: '%tag% &cYou cannot demote players.'
+clan dont permission top promote: '%tag% &cYou cannot promote players.'
+player no invitation: '%tag% &cYou have no invitations.'
+clan dont mod and leader: '%tag% &cYou are not the leader or Mod of the Clan.'
+clan player dont mod: '%tag% &cThis player is not a moderator.'
+clan player dont mod: '%tag% &cThis player is already a moderator.'
+player offline: '%tag% &cThe player is offline or does not exist!'
+player cannot expel leader: '%tag% &cYou cannot expel the Clan Leader.'
+player is clan leader: '%tag% &cYou are the Clan Leader, to leave use &b/clan disband&c and you will delete the Clan ...'
+player donthave clan: '%tag% &cYou dont have a Clan.'
+player have clan: '%tag% &cYou already have a clan.'
+player dont have money: '%tag% &cYou need to &a$%amount% &cfor this.'
+player debited money: '%tag% &eIt was debited &a%amount% &eyour account.'
+player invitation expired: '%tag% &cYour invitation to join the Clan &f%clan_tag% &cehas expired.'
+gui error: '%tag% &cThis menu contains an error and cannot be opened'
+player teleport dont move: '%tag% &ePreparing teleport, do not move by %sec% sec.'
+player teleport moved: '%tag% &cYou moved and the teleport was canceled!!!'
+player teleport true: '%tag% &eYou were teleported!'
+player teleport false: '%tag% &cYou have not been teleported for any mistake!'
+unknown error: '%tag% &cAn unknown error occurred with this, please try again!'
+nothing here: '&cNothing here.'
+clan empty name: '&c<Without name!>'
+clan empty desc: '&c<Without description!>'
+json advanced action create: '%tag% &7Type in the chat the name of the new clan you want to create or use &c/clan cancel &r&7to cancel!'
+json advanced action disband: '%tag% &7Type &b&l%confirm_action% &r&7in the chat to confirm or use &c/clan cancel &r&7to cancel!'
+json advanced action modtag: '%tag% &7Type in the chat the new TAG of the clan or use &c/clan cancel &r&7to cancel!'
+json advanced action desc: '%tag% &7Type in the chat the new clan description or use &c/clan cancel &r&7to cancel!'
+json advanced action name: '%tag% &7Type in the chat the new clan name or use &c/clan cancel &r&7to cancel!'
+json advanced action invite: '%tag% &7Write in the chat who you want to invite to the clan or use &c/clan cancel &r&7to cancel!'
+json simple invite received: ' &c&l! &eYou have received an invitation to join the Clan &f%clan_tag%&e, the invitation expires on &b%sec_expires% sec&e. &eUse &b/clan join %clan_tag_nocolor% &eor &b/clan deny %clan_tag_nocolor%'
+json simple command unknown: '%tag% &cUnknown command, use &d/uclan help &cto see the list of available commands.'
+json simple command unknown player: '%tag% &cUnknown command, use &d/clan help &cto see the list of available commands.'
+json simple clan ally rival list format: ' &8%clan_tag% &7- &b%clan_kdr% &7- &b%clan_members_count%'
+json simple clan list format: ' &a%clan_rank%° &7- &8%clan_tag% &7- &f%clan_desc% &7- &b%clan_kdr% &7- &b%clan_members_count%'
+json simple list next: ' &bNext page >>'
+json simple list prev: ' << &bPrevious page'
+json simple list controler: ' << &bPrevious page'
+json simple clan deleted: ' &a%clan_rank%° &7- &c&mDeleted clan!'

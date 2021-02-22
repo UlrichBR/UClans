@@ -1,0 +1,209 @@
+#
+#Placeholders with PlaceholderAPI:
+#CLAN
+# %uclans_hasclan%
+# %uclans_hasclan_formated%
+# %uclans_tag_nocolor%
+# %uclans_tag_color%
+# %uclans_tag_formated%
+# %uclans_desc_nocolor%
+# %uclans_desc_color%
+# %uclans_leader%
+# %uclans_creation_date%
+# %uclans_creation_date_formated%
+# %uclans_clanid%
+# %uclans_clan_kills%
+# %uclans_clan_deaths%
+# %uclans_clan_souls%
+# %uclans_clan_kdr%
+# %uclans_clan_home%
+# %uclans_clan_members%
+# %uclans_clan_onlinemembers%
+# %uclans_count_onlinemembers%
+# %uclans_clan_ally%
+# %uclans_clan_rival%
+# %uclans_count_members%
+# %uclans_name%
+# %uclans_leader%
+# %uclans_verified%
+#PLAYER
+# %uclans_player%
+# %uclans_player_name%
+# %uclans_player_kills%
+# %uclans_player_deaths%
+# %uclans_player_souls%
+# %uclans_player_kdr%
+# %uclans_level_identifier%
+# %uclans_tag_formated_level%
+# %uclans_player_joindate%
+# %uclans_player_joindate_formated%
+# %uclans_player_lastsee%
+# %uclans_player_lastsee_formated%
+# %uclans_player_leader_yes_no%
+# %uclans_player_mod_yes_no%
+
+Plugin:
+  check-for-updates: true
+  use-metrics: true
+
+###### About bungeecord mode #####
+# The bungeecord mode synchronizes user data at a high frequency, so if you don't use the 
+#same database on multiple servers, leave this "false" to save memory.
+# Remember, if you don't use bungeecord mode, use different databases for each server.
+# Holograms are not synchronized.
+#Clan bases are not yet being separated
+#The 'server' needs to be unique for each minigame and if it is blank the bungeecord mode is turned off.
+###### About bungeecord mode #####
+
+Bungeecord: false
+Server: ''
+
+Config:
+  tag: '&6&lU&a&lClans &8>>'
+  date-format: 'dd/MM/yyyy HH:mm'
+  debug_errors: false
+  confirm: 'CONFIRM' # use '' to disable confirmation
+  confirm_case_sensitive: true #If true use CONFIRM or false use in any order like CoNFirm
+  teleport_delay: 3
+  aliases_tabcomplete: true
+  commands_tabcomplete: true
+  logs:
+    clan: true
+    stacktrace: true
+
+Hologram:
+  enabled: true
+  prefix: 'uc_'
+  maxlist: 10
+  ajust-Y: 2.0
+  header: '&d&lTop 10 Clans'
+  footer: '&eFor more use &b/clan list'
+  format: '&6&l%num%° &7- &a%clan_tag% &7- %clan_members_size% member(s) &7- &b%clan_kills%&8/&b%clan_deaths% &8(%clan_kdr%)'
+  tasks:
+    holosave_start: 300 #IN SECONDS
+    holosave: 300 #IN SECONDS
+    holorefresh_start: 5 #IN SECONDS
+    holorefresh: 300 #IN SECONDS
+    holospawnafter: 5 #IN TICKS (20 TICKS = 1 SECOND, RECOMENDED 5~10)
+
+Cosmetic:
+  item:
+    material: 'STAINED_GLASS_PANE'
+    data: 7
+    amount: 1
+    name: ' '
+    flags:
+    - 'HIDE_ENCHANTS'
+
+Wand:
+  item:
+    material: 'STICK'
+    data: 0
+    amount: 1
+    name: '&4UltimateClans &6&lWAND'
+    lore:
+    - ' '
+    - ' &eThis item should be used to mark'
+    - '&eregion points for region.'
+    - ' '
+    - ' &bLEFT-CLICK &7to mark point &b#1'
+    - ' &bRIGHT-CLICK &7to mark point &b#2'
+    sound: ''
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - 'PROTECTION_ENVIRONMENTAL;2'
+
+Gui:
+  help_gui: true
+  hasclan: 'index_hasclan'
+  noclan: 'index_noclan'
+
+Clan:
+  disabled_command_worlds: #Worlds where clan commands are disabled between members of the same clan.
+  - 'disabled_worlds'
+  forced_ff_worlds: #Worlds where friendly fire is always active between members of the same clan.
+  - 'disabled_worlds'
+  forced_ff_regions: #Regions where friendly fire is always active between members of the same clan.
+  - 'worlds'
+  invite:
+    max_time_seconds: 60 #IN SECONDS
+    allowed_chars: "[0-9a-zA-Z_\\-]*"
+  chat:
+    format: ' &d%uclans_level_identifier% &5%player%&d: &d%chat_message%' #Any placeholder can be used with PAPI.
+  verify:
+    always_verified: false
+    list_unverified: false
+  kills: #points added to the clan and player KDR when the events below occur, (kills/deaths = ratio)
+    neutral: 1
+    ally: 0
+    rival: 3
+  match:
+    rival:
+      add: 'add'
+      remove: 'remove'
+    ally:
+      add: 'add'
+      remove: 'remove'
+  prices:
+    enabled: true #Default VAULT, if "false" does not charge player values.
+    desc: 0.0
+    create: 1000.0
+    invite: 0.0
+    deny: 0.0
+    join: 0.0
+    leave: 0.0
+    kick: 0.0
+    promote: 0.0
+    demote: 0.0
+    disband: 0.0
+    sethome: 0.0
+    home: 0.0
+    modtag: 0.0
+    rival: 0.0 #ADD OR REMOVE
+    ally: 0.0 #ADD OR REMOVE
+    togglechat: 0.0
+    toggleff: 0.0
+    name: 0.0
+  limits:
+    amount_by_player: 2 #old method
+    max_by_clan: 10 #Maximum players per clan
+  task:
+    update_list:
+      start: 5 #IN SECONDS
+      next: 300 #IN SECONDS
+    update_invite:
+      start: 300 #IN SECONDS
+      next: 600 #IN SECONDS
+  level:
+    leader:
+      identifier: '&6**&r'
+    mod:
+      identifier: '&2*&r'
+  list:
+    max_pag: 10
+    max_list: 10
+    use_next_prev: false
+  tag:
+    allow_color: true
+    min_chars: 2
+    max_chars: 8
+    allowed_chars: "[0-9a-zA-Z_\\-]*"
+    default_color: '&8'
+    start: '&f['
+    end: '&f]&r'
+    noclan_formated: '&4WITHOUT CLAN'
+  desc:
+    allow_color: true
+    min_chars: 2
+    max_chars: 64
+    allowed_chars: "[0-9a-zA-Z _\\-]*"
+    default_color: '&8'
+    nodesc_formated: '&8WITHOUT DESC'
+  name:
+    allow_color: true
+    min_chars: 2
+    max_chars: 64
+    allowed_chars: "[0-9a-zA-Z _\\-]*"
+    default_color: '&8'
+    noname_formated: '&8WITHOUT NAME'
