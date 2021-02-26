@@ -78,7 +78,7 @@ Hologram:
   ajust-Y: 2.0
   header: '&d&lTop 10 Clans'
   footer: '&eFor more use &b/clan list'
-  format: '&6&l%num%° &7- &a%clan_tag% &7- %clan_members_size% member(s) &7- &b%clan_kills%&8/&b%clan_deaths% &8(%clan_kdr%)'
+  format: '&6&l%num%° &7- &a%uclans_tag_color% &7- %uclans_count_members% member(s) &7- &b%uclans_clan_kills%&8/&b%uclans_clan_deaths% &8(%uclans_clan_kdr%)'
   tasks:
     holosave_start: 300 #IN SECONDS
     holosave: 300 #IN SECONDS
