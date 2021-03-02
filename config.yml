@@ -120,6 +120,7 @@ Gui:
   noclan: 'index_noclan'
 
 Clan:
+  disable_allypvp_onff: true
   disabled_command_worlds: #Worlds where clan commands are disabled between members of the same clan.
   - 'disabled_worlds'
   forced_ff_worlds: #Worlds where friendly fire is always active between members of the same clan.
