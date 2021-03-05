@@ -127,6 +127,8 @@ Clan:
   - 'disabled_worlds'
   forced_ff_regions: #Regions where friendly fire is always active between members of the same clan.
   - 'worlds'
+  ally_invite:
+    max_time_seconds: 60 #IN SECONDS
   invite:
     max_time_seconds: 60 #IN SECONDS
     allowed_chars: "[0-9a-zA-Z_\\-]*"
@@ -146,6 +148,8 @@ Clan:
     ally:
       add: 'add'
       remove: 'remove'
+      accept: 'accept'
+      deny: 'deny'
   prices:
     enabled: true #Default VAULT, if "false" does not charge player values.
     desc: 0.0
@@ -174,8 +178,8 @@ Clan:
       start: 5 #IN SECONDS
       next: 300 #IN SECONDS
     update_invite:
-      start: 300 #IN SECONDS
-      next: 600 #IN SECONDS
+      start: 60 #IN SECONDS
+      next: 60 #IN SECONDS
   level:
     leader:
       identifier: '&6**&r'
