@@ -20,7 +20,7 @@ Json:
       click_type: 'SUGGEST_COMMAND'
       click_action: '/clan info %clan_tag_nocolor%'
     clan_list_format:
-      raw_text: ' &a%clan_rank%° &7- &8%clan_tag% &7- &f%clan_desc% &7- &b%clan_kdr% &7- &b%clan_members_count%'
+      raw_text: ' &a%clan_rank%Â° &7- &8%clan_tag% &7- &f%clan_desc% &7- &b%clan_kdr% &7- &b%clan_members_count%'
       hover_text: '&aClick show info of clan.'
       click_type: 'SUGGEST_COMMAND'
       click_action: '/clan info %clan_tag_nocolor%'
@@ -40,7 +40,7 @@ Json:
       click_type: 'RUN_COMMAND'
       click_action: '/clan list %prev_page%'
     clan_deleted:
-      raw_text: ' &a%clan_rank%° &7- &c&mDeleted clan!'
+      raw_text: ' &a%clan_rank%Â° &7- &c&mDeleted clan!'
       hover_text: '&cSoon it will leave this list!'
       click_type: ''
       click_action: ''
@@ -83,6 +83,52 @@ Json:
               hover_text: '&aClick to deny the request, or use &b/clan deny %clan_tag_nocolor%'
               click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
               click_action: '/clan deny %clan_tag_nocolor%'
+              raw_base_color: ''
+        space3:
+          raw_text: ' '
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    ally_receive:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eAlliance request received from clan &f%clan_tag%'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan ally <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        expires:
+          center: true
+          raw_text: '&7Expires in &b%sec_expires% sec&7.'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan ally <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        space2:
+          raw_text: ' '
+        actions:
+          center: true
+          raw_text: ''
+          sublines:
+            1:
+              raw_text: '&a&l[ACCEPT]'
+              hover_text: '&aClick to accept, or use &b/clan accept %clan_tag_nocolor%'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan ally accept %clan_tag_nocolor%'
+              raw_base_color: ''
+            2:
+              raw_text: '      &c&l[DENY]'
+              hover_text: '&aClick to deny the request, or use &b/clan deny %clan_tag_nocolor%'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan ally deny %clan_tag_nocolor%'
               raw_base_color: ''
         space3:
           raw_text: ' '
