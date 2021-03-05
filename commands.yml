@@ -640,14 +640,14 @@ Commands:
         no_permission_message: '%tag% &cYou dont have permission for this.'
         alias: 'aliado'
         show:
-            on_help: ' &b/clan ally <add/remove> <tag> &7-&e Add Clan as ally.'
+            on_help: ' &b/clan ally <add/remove/accept/deny> <tag> &7-&e Add Clan as ally.'
             on_help_json:
               hover_text: '&aClick to add/remove a Clan ally.'
               click_type: 'SUGGEST_COMMAND'
-              click_action: '/clan ally <add/remove> <tag> '
+              click_action: '/clan ally <add/remove/accept/deny> <tag> '
             on_success: '%tag% &eList of alliances is updated.'
             on_error: '%tag% &cError to use ally.'
-            on_usage: '%tag% &cUse &b/clan ally <add/remove> <tag> '
+            on_usage: '%tag% &cUse &b/clan ally <add/remove/accept/deny> <tag> '
         sound:
             on_help: ''
             on_success: ''
