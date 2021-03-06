@@ -1,3 +1,46 @@
+#
+#Internal Placeholders:
+#CLAN
+# %uclans_hasclan%
+# %uclans_hasclan_formated%
+# %uclans_tag_nocolor%
+# %uclans_tag_color%
+# %uclans_tag_formated%
+# %uclans_desc_nocolor%
+# %uclans_desc_color%
+# %uclans_leader%
+# %uclans_creation_date%
+# %uclans_creation_date_formated%
+# %uclans_clanid%
+# %uclans_clan_kills%
+# %uclans_clan_deaths%
+# %uclans_clan_souls%
+# %uclans_clan_kdr%
+# %uclans_clan_home%
+# %uclans_clan_members%
+# %uclans_clan_onlinemembers%
+# %uclans_count_onlinemembers%
+# %uclans_clan_ally%
+# %uclans_clan_rival%
+# %uclans_count_members%
+# %uclans_name%
+# %uclans_leader%
+# %uclans_verified%
+#PLAYER
+# %uclans_player%
+# %uclans_player_name%
+# %uclans_player_kills%
+# %uclans_player_deaths%
+# %uclans_player_souls%
+# %uclans_player_kdr%
+# %uclans_level_identifier%
+# %uclans_tag_formated_level%
+# %uclans_player_joindate%
+# %uclans_player_joindate_formated%
+# %uclans_player_lastsee%
+# %uclans_player_lastsee_formated%
+# %uclans_player_leader_yes_no%
+# %uclans_player_mod_yes_no%
 Gui:
   index_noclan:
     inventory_name: '&a&lClan Menu &c(without Clan)'
@@ -35,6 +78,26 @@ Gui:
           - 'NbtExample:teste'
           int:
           - 'NbtExample2:0001'
+      clans:
+        sound-click: ''
+        itemstack: 'SKULL_ITEM'
+        skullowner: ''
+        texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM4Y2YzZjhlNTRhZmMzYjNmOTFkMjBhNDlmMzI0ZGNhMTQ4NjAwN2ZlNTQ1Mzk5MDU1NTI0YzE3OTQxZjRkYyJ9fX0='
+        data: 3
+        amount: 1
+        slot: 13
+        name: '&aAll verified Clans'
+        lore:
+        - ''
+        - ' &eClick to open the clan list menu.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] 1'
+        right-action:
+        - '[opengui_clans] 1'
       commands:
         sound-click: ''
         itemstack: 'PAPER'
