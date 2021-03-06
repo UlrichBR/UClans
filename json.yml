@@ -45,6 +45,33 @@ Json:
       click_type: ''
       click_action: ''
   advanced:
+    help_pagination:
+      lines:
+        start:
+          center: false
+          raw_text: ' '
+        actions:
+          center: false
+          raw_text: ''
+          sublines:
+            prev:
+              raw_text: ' &a<< Previous '
+              hover_text: '&aClick to see the previous page.'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan help %prev_page%'
+              raw_base_color: ''
+            join:
+              raw_text: ' &7| '
+              hover_text: ' '
+              click_type: '' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: ''
+              raw_base_color: ''
+            next:
+              raw_text: ' &aNext >> '
+              hover_text: '&aClick to see the next page.'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan help %next_page%'
+              raw_base_color: ''
     invite_receive:
       lines:
         space1:
