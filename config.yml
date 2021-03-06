@@ -67,6 +67,7 @@ Config:
   teleport_delay: 3
   aliases_tabcomplete: true
   commands_tabcomplete: true
+  help_max_result: 11
   logs:
     clan: true
     stacktrace: true
