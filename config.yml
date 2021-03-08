@@ -88,13 +88,20 @@ Hologram:
     holospawnafter: 5 #IN TICKS (20 TICKS = 1 SECOND, RECOMENDED 5~10)
 
 Cosmetic:
-  item:
+  item: # to disable cosmetics use item: {}
     material: 'STAINED_GLASS_PANE'
     data: 7
     amount: 1
     name: ' '
     flags:
     - 'HIDE_ENCHANTS'
+    enchants:
+    - ''
+    nbt: #This can be used on all items in this file, To not use just erase this part.
+      string:
+      - 'NbtExample:teste'
+      int:
+      - 'NbtExample2:0001'
 
 Wand:
   item:
