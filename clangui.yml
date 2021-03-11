@@ -491,6 +491,28 @@ Gui:
         right-action:
         - '[closegui]'
         - '[player] /clan help'
+      chest:
+        sound-click: ''
+        itemstack: 'Chest'
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 33
+        name: '&aShared Chest'
+        lore:
+        - ''
+        - ' &eClick to open shared Chest.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[open_chest]'
+        right-action:
+        - '[closegui]'
+        - '[open_chest]'
       clans:
         sound-click: ''
         itemstack: 'SKULL_ITEM'
