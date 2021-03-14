@@ -141,9 +141,9 @@ Clan:
     max_time_seconds: 60 #IN SECONDS
     allowed_chars: "[0-9a-zA-Z_\\-]*"
   chat:
-    format: ' &d%uclans_level_identifier% &5%player%&d: &d%chat_message%' #Any placeholder can be used with PAPI.
+    format: ' &d%uclans_tag_color%&d%uclans_level_identifier% &5%player%&d: &d%chat_message%' #Any uclans placeholder can be used.
   verify:
-    always_verified: false
+    always_verified: true
     list_unverified: false
   kills: #points added to the clan and player KDR when the events below occur, (kills/deaths = ratio)
     neutral: 1
@@ -178,6 +178,7 @@ Clan:
     togglechat: 0.0
     toggleff: 0.0
     name: 0.0
+    chest: 0.0
   limits:
     amount_by_player: 2 #old method
     max_by_clan: 10 #Maximum players per clan
