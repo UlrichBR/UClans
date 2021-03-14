@@ -67,34 +67,6 @@ Commands:
             on_help: ''
             on_success: '&aCreated a new clan &f%clan_tag%&a with tag &b%clan_desc%'
             on_error: '&cError, Try again...'
-      chest:
-        permission: 'uclans.player.chest'
-        no_permission_message: '%tag% &cYou dont have permission for this.'
-        alias: 'bau'
-        show:
-            on_help: ' &b/clan chest &7-&e Open clan shared chest.'
-            on_help_json:
-              hover_text: '&aClick to create a new clan.'
-              click_type: 'SUGGEST_COMMAND'
-              click_action: '/clan chest'
-            on_success: '%tag% &aSuccess!'
-            on_error: '%tag% &cError to open, try again.'
-            on_usage: '%tag% &cUse &b/clan chest'
-        sound:
-            on_help: ''
-            on_success: ''
-            on_error: ''
-            extra:
-              volume: 10
-              pitch: 1
-        title:
-            on_help: ''
-            on_success: ''
-            on_error: '&cError!%nl%&cTry again...'
-        actionbar:
-            on_help: ''
-            on_success: '&aShared chest opened successfully.'
-            on_error: '&cError, Try again...'
       desc:
         permission: 'uclans.player.desc'
         no_permission_message: '%tag% &cYou dont have permission for this.'
@@ -736,17 +708,45 @@ Commands:
         no_permission_message: '%tag% &cYou dont have permission for this.'
         alias: ''
         show:
-            on_help: ' &8Clan land: &6[?]'
+            on_help: ' &8Clan Addons: &6[?]'
             on_help_json:
               hover_text: '&aLand commands.'
               click_type: ''
               click_action: ''
+      chest:
+        permission: 'uclans.player.chest'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'bau'
+        show:
+            on_help: ' &6/clan chest &7-&e Open clan shared chest.'
+            on_help_json:
+              hover_text: '&aClick to create a new clan.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/clan chest'
+            on_success: '%tag% &aSuccess!'
+            on_error: '%tag% &cError to open, try again.'
+            on_usage: '%tag% &cUse &b/clan chest'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+        title:
+            on_help: ''
+            on_success: ''
+            on_error: '&cError!%nl%&cTry again...'
+        actionbar:
+            on_help: ''
+            on_success: '&aShared chest opened successfully.'
+            on_error: '&cError, Try again...'
       land:
         permission: ''
         no_permission_message: '%tag% &cYou dont have permission for this.'
         alias: 'terrenos'
         show:
-            on_help: ' &6/land &7-&6 Shows land options.'
+            on_help: ' &6/land &7-&e Shows land options.'
             on_help_json:
               hover_text: '&aClick to view.'
               click_type: 'SUGGEST_COMMAND'
@@ -1005,6 +1005,35 @@ Commands:
         actionbar:
             on_help: ''
             on_success: '&aYou deleted the Clan.'
+            on_error: '&cError, Try again...'
+      forcejoin:
+        permission: 'uclans.admin.forcejoin'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'forcejoin'
+        show:
+            on_help: ' &4/uclan forcejoin <player> <tag> &7-&e Adds a player to a clan.'
+            on_help_json:
+              hover_text: '&aClick to adds a player to a clan.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan forcejoin <player> <tag>'
+            on_success: '%tag% &aYou added the player!'
+            on_error: '%tag% &cError adding player.'
+            on_usage: '%tag% &cUse &4/uclan forcejoin <player> <tag>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+        title:
+            on_help: ''
+            on_success: '&aPlayer added.'
+            on_error: '&cError!%nl%&cTry again...'
+        actionbar:
+            on_help: ''
+            on_success: '&aYou added the player.'
             on_error: '&cError, Try again...'
       verify:
         permission: 'uclans.admin.verify'
