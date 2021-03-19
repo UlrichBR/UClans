@@ -67,6 +67,62 @@ Commands:
             on_help: ''
             on_success: '&aCreated a new clan &f%clan_tag%&a with tag &b%clan_desc%'
             on_error: '&cError, Try again...'
+      changeleader:
+        permission: 'uclans.player.changeleader'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'mudarlider'
+        show:
+            on_help: ' &b/clan changeleader <player> &7-&e Transfer the leadership.'
+            on_help_json:
+              hover_text: '&aClick to transfer the leadership.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/clan changeleader <player>'
+            on_success: '%tag% &aYou have changed clan leadership to %clan_leader%'
+            on_error: '%tag% &cError transferring leadership.'
+            on_usage: '%tag% &cUse &b/clan changeleader <player>'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+        title:
+            on_help: ''
+            on_success: '&aCreated &f%clan_tag%%nl%&b%clan_desc%'
+            on_error: '&cError!%nl%&cTry again...'
+        actionbar:
+            on_help: ''
+            on_success: '&aCreated a new clan &f%clan_tag%&a with tag &b%clan_desc%'
+            on_error: '&cError, Try again...'
+      chest:
+        permission: 'uclans.player.chest'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'bau'
+        show:
+            on_help: ' &b/clan chest &7-&e Open clan shared chest.'
+            on_help_json:
+              hover_text: '&aClick to create a new clan.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/clan chest'
+            on_success: '%tag% &aSuccess!'
+            on_error: '%tag% &cError to open, try again.'
+            on_usage: '%tag% &cUse &b/clan chest'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+        title:
+            on_help: ''
+            on_success: ''
+            on_error: '&cError!%nl%&cTry again...'
+        actionbar:
+            on_help: ''
+            on_success: '&aShared chest opened successfully.'
+            on_error: '&cError, Try again...'
       desc:
         permission: 'uclans.player.desc'
         no_permission_message: '%tag% &cYou dont have permission for this.'
@@ -708,45 +764,17 @@ Commands:
         no_permission_message: '%tag% &cYou dont have permission for this.'
         alias: ''
         show:
-            on_help: ' &8Clan Addons: &6[?]'
+            on_help: ' &8Clan land: &6[?]'
             on_help_json:
               hover_text: '&aLand commands.'
               click_type: ''
               click_action: ''
-      chest:
-        permission: 'uclans.player.chest'
-        no_permission_message: '%tag% &cYou dont have permission for this.'
-        alias: 'bau'
-        show:
-            on_help: ' &6/clan chest &7-&e Open clan shared chest.'
-            on_help_json:
-              hover_text: '&aClick to create a new clan.'
-              click_type: 'SUGGEST_COMMAND'
-              click_action: '/clan chest'
-            on_success: '%tag% &aSuccess!'
-            on_error: '%tag% &cError to open, try again.'
-            on_usage: '%tag% &cUse &b/clan chest'
-        sound:
-            on_help: ''
-            on_success: ''
-            on_error: ''
-            extra:
-              volume: 10
-              pitch: 1
-        title:
-            on_help: ''
-            on_success: ''
-            on_error: '&cError!%nl%&cTry again...'
-        actionbar:
-            on_help: ''
-            on_success: '&aShared chest opened successfully.'
-            on_error: '&cError, Try again...'
       land:
         permission: ''
         no_permission_message: '%tag% &cYou dont have permission for this.'
         alias: 'terrenos'
         show:
-            on_help: ' &6/land &7-&e Shows land options.'
+            on_help: ' &6/land &7-&6 Shows land options.'
             on_help_json:
               hover_text: '&aClick to view.'
               click_type: 'SUGGEST_COMMAND'
