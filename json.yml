@@ -202,6 +202,25 @@ Json:
           raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
         spaceX:
           raw_text: ' '
+    action_changeleader:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: false
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: false
+          raw_text: '%tag% &7Type &b&l%confirm_action% &r&7in the chat to confirm or &c&l[CLICK &c&lHERE] &r&7to cancel!'
+          hover_text: '&eClick to cancel action'
+          click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan cancel'
+          raw_base_color: 'SILVER'
+        end:
+          center: false
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
     action_modtag:
       lines:
         space1:
