@@ -62,6 +62,7 @@ Config:
   tag: '&6&lU&a&lClans &8>>'
   date-format: 'dd/MM/yyyy HH:mm'
   debug_errors: false
+  disable_command_chat_interactions: false
   confirm: 'CONFIRM' # use '' to disable confirmation
   confirm_case_sensitive: true #If true use CONFIRM or false use in any order like CoNFirm
   teleport_delay: 3
@@ -129,6 +130,7 @@ Gui:
 
 Clan:
   disable_allypvp_onff: true
+  disable_shared_chat_ally: false
   disabled_command_worlds: #Worlds where clan commands are disabled between members of the same clan.
   - 'disabled_worlds'
   forced_ff_worlds: #Worlds where friendly fire is always active between members of the same clan.
