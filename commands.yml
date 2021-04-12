@@ -39,6 +39,34 @@ Commands:
             on_help: ''
             on_success: ''
             on_error: ''
+      war:
+        permission: 'uclans.player.war'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'war'
+        show:
+            on_help: ' &b/clan war <send|accept|deny|join> &7-&e Sends a war challenge.'
+            on_help_json:
+              hover_text: '&aClick to sends a war challenge.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/clan war <send|accept|deny|join>'
+            on_success: '%tag% &aThe challenge to a war was sent successfully, wait for the answer!'
+            on_error: '%tag% &cThere was an error submitting the challenge.'
+            on_usage: '%tag% &cUse &b/clan war <send|accept|deny|join>'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+        title:
+            on_help: ''
+            on_success: '&aCreated &f%clan_tag%%nl%&b%clan_desc%'
+            on_error: '&cError!%nl%&cTry again...'
+        actionbar:
+            on_help: ''
+            on_success: '&aCreated a new clan &f%clan_tag%&a with tag &b%clan_desc%'
+            on_error: '&cError, Try again...'
       create:
         permission: 'uclans.player.create'
         no_permission_message: '%tag% &cYou dont have permission for this.'
@@ -1325,3 +1353,118 @@ Commands:
             on_help: ''
             on_success: '&aYou have been teleported to the region.'
             on_error: '&cError, Try again...'
+      separer3:
+        permission: ''
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: ''
+        show:
+            on_help: ' &8Arenas: &6[?]'
+            on_help_json:
+              hover_text: '&aArena commands.'
+              click_type: ''
+              click_action: ''
+      addarena:
+        permission: 'uclans.admin.addarena'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'addarena'
+        show:
+            on_help: ' &7/uclan addarena <name> &7-&e Add an arena.'
+            on_help_json:
+              hover_text: '&aClick to add an arena.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan addarena <name>'
+            on_success: '%tag% &aArena was successfully created, use &b/uclan setpoint <arena> <point> &ato set the arena points..'
+            on_error: '%tag% &cThere was an error adding the arena'
+            on_usage: '%tag% &cErro use &b/uclan addarena <name>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+      removearena:
+        permission: 'uclans.admin.removearena'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'removearena'
+        show:
+            on_help: ' &7/uclan removearena <name> &7-&e Remove an arena.'
+            on_help_json:
+              hover_text: '&aClick to remove an arena.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan removearena <name>'
+            on_success: '%tag% &aArena successfully removed!.'
+            on_error: '%tag% &cThere was an error remove the arena'
+            on_usage: '%tag% &cErro use &b/uclan removearena <name>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+      listarenas:
+        permission: 'uclans.admin.listarenas'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'listarenas'
+        show:
+            on_help: ' &7/uclan listarenas &7-&e Remove an arena.'
+            on_help_json:
+              hover_text: '&aClick to list arenas.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan listarenas'
+            on_success: '%tag% &aSuccess!.'
+            on_error: '%tag% &cAn error occurred while listing arenas'
+            on_usage: '%tag% &cErro use &b/uclan listarenas'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+      setpoint:
+        permission: 'uclans.admin.setpoint'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'setpoint'
+        show:
+            on_help: ' &7/uclan setpoint <arena> <SPAWN1|SPAWN2|EXIT|LOBBY> &7-&e Set &ethe arena points.'
+            on_help_json:
+              hover_text: '&aClick to set the arena points.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan setpoint <arena> <SPAWN1|SPAWN2|EXIT|LOBBY>'
+            on_success: '%tag% &aThe point &b%point% &aof the arena &b%arena_name% &ahas been successfully saved to your location.'
+            on_error: '%tag% &cAn error occurred while saving point, try again.'
+            on_usage: '%tag% &cErro use &b/uclan setpoint <arena> <SPAWN1|SPAWN2|EXIT|LOBBY>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
+      togglearena:
+        permission: 'uclans.admin.togglearena'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'togglearena'
+        show:
+            on_help: ' &7/uclan togglearena <name> &7-&e Set the arena points.'
+            on_help_json:
+              hover_text: '&aClick to set the arena points.'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan togglearena <name>'
+            on_success: '%tag% &eThe arena is now %arena_enabled%'
+            on_error: '%tag% &cThe arena cannot be changed, check the points using &b/uclan setpoint %arena_name% <point>'
+            on_usage: '%tag% &cErro use &b/uclan togglearena <name>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
