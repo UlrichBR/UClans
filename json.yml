@@ -44,6 +44,36 @@ Json:
       hover_text: '&cSoon it will leave this list!'
       click_type: ''
       click_action: ''
+    war_left_player:
+      raw_text: '%tag% &ePlayer &b%player% &eis out of the war, &b%clanall_joined_players%&7/&b%max% &eleft.'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
+    war_send_to:
+      raw_text: '%tag% &aThe clan &b%clan1% &achallenged the clan &b%clan2% &ato war, awaiting ...'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
+    war_send_accepted:
+      raw_text: '%tag% &aThe &b%clan2% &aclan accepted the &b%clan1% &awar challenge, the battle begins soon!'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
+    war_send_danied:
+      raw_text: '%tag% &cThe %clan2% &cclan did not accept the &b%clan1% &cwar challenge.'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
+    war_send_started:
+      raw_text: '%tag% &aThe war between the &b%clan1% &aand &b%clan1% &aclans has started.'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
+    war_send_ending:
+      raw_text: '%tag% &aThe war between the &b%clan1% &aand &b%clan2% &aclans ended, the winner was the &b&l%clan_tag_winner% &aclan.'
+      hover_text: ''
+      click_type: ''
+      click_action: ''
   advanced:
     help_pagination:
       lines:
@@ -147,18 +177,218 @@ Json:
           sublines:
             1:
               raw_text: '&a&l[ACCEPT]'
-              hover_text: '&aClick to accept, or use &b/clan accept %clan_tag_nocolor%'
+              hover_text: '&aClick to accept, or use &b/clan ally accept %clan_tag_nocolor%'
               click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
               click_action: '/clan ally accept %clan_tag_nocolor%'
               raw_base_color: ''
             2:
               raw_text: '      &c&l[DENY]'
-              hover_text: '&aClick to deny the request, or use &b/clan deny %clan_tag_nocolor%'
+              hover_text: '&aClick to deny the request, or use &b/clan ally deny %clan_tag_nocolor%'
               click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
               click_action: '/clan ally deny %clan_tag_nocolor%'
               raw_base_color: ''
-        space3:
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
           raw_text: ' '
+    war_inwait_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eA war is about to begin!'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war join'
+          raw_base_color: 'SILVER'
+        name2:
+          center: true
+          raw_text: '&c&l! &eHelp your team win this battle!'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war join'
+          raw_base_color: 'SILVER'
+        actions:
+          center: true
+          raw_text: ''
+          sublines:
+            1:
+              raw_text: '&a&l[JOIN]'
+              hover_text: '&aClick to accept, or use &b/clan war join'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan war join'
+              raw_base_color: ''
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_inlobby_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eThe time for entering the war is over!'
+          raw_base_color: 'SILVER'
+        wait:
+          center: true
+          raw_text: '&c&l! &eGet ready, the war starts in a few seconds!'
+          raw_base_color: 'SILVER'
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_instarted_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eThe war has begun, may the best clan win!'
+          raw_base_color: 'SILVER'
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_inending_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eThe war is over, Winning clan: &b%clan_tag_winner%'
+          raw_base_color: 'YELLOW'
+        winn:
+          center: true
+          raw_text: '&c&l! &eHas 60 sec to collect the spoils of war!'
+          raw_base_color: 'YELLOW'
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_instoped_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eThe war is over!'
+          raw_base_color: 'SILVER'
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_incanceled_announce:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        name:
+          center: true
+          raw_text: '&c&l! &eThe event has been canceled!'
+          raw_base_color: 'SILVER'
+        reason:
+          center: true
+          raw_text: '&c&l! &cReason: %reason%'
+          raw_base_color: 'SILVER'
+        end:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        spaceX:
+          raw_text: ' '
+    war_joined_message_wait:
+      lines:
+        name:
+          center: false
+          raw_text: '%tag%  &eWaiting for players. Joined: &b%clanall_joined_players%&7/&b%max%&e, Time: &b%war_time_next% sec.'
+          raw_base_color: 'SILVER'
+        spaceX:
+          raw_text: ' '
+    war_joined_message:
+      lines:
+        name:
+          center: false
+          raw_text: '%tag% &b%player% &eof clan &b%clan% &ejoined: &b%clanall_joined_players%&7/&b%max%&e.'
+          raw_base_color: 'SILVER'
+        spaceX:
+          raw_text: ' '
+    war_receive:
+      lines:
+        space1:
+          raw_text: ' '
+        start:
+          center: true
+          raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
+        send:
+          center: true
+          raw_text: '&c&l! &eA war challenge was thrown at your clan!'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        name:
+          center: true
+          raw_text: '&c&l! &eChallenging clan: &f%clan_tag%'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        info:
+          center: true
+          raw_text: '&c&l! &eArena: &f%arena% &7- &eMax Players: &b%max%'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        expires:
+          center: true
+          raw_text: '&7Expires in &b%sec_expires% sec&7.'
+          hover_text: '&aClick to ACCEPT or DENY.'
+          click_type: 'SUGGEST_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+          click_action: '/clan war <accept/deny> %clan_tag_nocolor%'
+          raw_base_color: 'SILVER'
+        space2:
+          raw_text: ' '
+        actions:
+          center: true
+          raw_text: ''
+          sublines:
+            1:
+              raw_text: '&a&l[ACCEPT/JOIN]'
+              hover_text: '&aClick to accept, or use &b/clan war accept %clan_tag_nocolor%'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan war accept %clan_tag_nocolor%'
+              raw_base_color: ''
+            2:
+              raw_text: '      &c&l[DENY]'
+              hover_text: '&aClick to deny the request, or use &b/clan war deny %clan_tag_nocolor%'
+              click_type: 'RUN_COMMAND' # SUGGEST_COMMAND, RUN_COMMAND, OPEN_URL
+              click_action: '/clan war deny %clan_tag_nocolor%'
+              raw_base_color: ''
         end:
           center: true
           raw_text: '&c&m-&7&m---------------------------------------------&c&m-'
