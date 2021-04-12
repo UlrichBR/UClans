@@ -73,6 +73,9 @@ Config:
     clan: true
     stacktrace: true
 
+War:
+  amount_format: '1|2|3|5|10|64'
+
 Hologram:
   enabled: true
   prefix: 'uc_'
@@ -137,6 +140,8 @@ Clan:
   - 'disabled_worlds'
   forced_ff_regions: #Regions where friendly fire is always active between members of the same clan.
   - 'worlds'
+  war_invite:
+    max_time_seconds: 60 #IN SECONDS
   ally_invite:
     max_time_seconds: 60 #IN SECONDS
   invite:
@@ -167,6 +172,11 @@ Clan:
       remove: 'remove'
       accept: 'accept'
       deny: 'deny'
+    war:
+      send: 'send'
+      accept: 'accept'
+      deny: 'deny'
+      join: 'join'
   prices:
     enabled: true #Default VAULT, if "false" does not charge player values.
     desc: 0.0
@@ -188,6 +198,7 @@ Clan:
     toggleff: 0.0
     name: 0.0
     chest: 0.0
+    war: 100.0
   limits:
     amount_by_player: 2 #old method
     max_by_clan: 10 #Maximum players per clan
