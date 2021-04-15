@@ -75,6 +75,11 @@ Config:
 
 War:
   amount_format: '1|2|3|5|10|64'
+  allowed_commands:
+  - '/clan'
+  - '/uclan'
+  - '/.'
+  - '/clanchat'
 
 Hologram:
   enabled: true
@@ -222,22 +227,25 @@ Clan:
     allow_color: true
     min_chars: 2
     max_chars: 8
-    allowed_chars: "[0-9a-zA-Z_\\-]*"
+    allowed_chars: "[0-9a-zA-Z_-]*"
     default_color: '&8'
     start: '&f['
     end: '&f]&r'
     noclan_formated: '&4WITHOUT CLAN'
+    unicodeblock: '' # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
   desc:
     allow_color: true
     min_chars: 2
     max_chars: 64
-    allowed_chars: "[0-9a-zA-Z _\\-]*"
+    allowed_chars: "[0-9a-zA-Z _-]*"
     default_color: '&8'
     nodesc_formated: '&8WITHOUT DESC'
+    unicodeblock: '' # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
   name:
     allow_color: true
     min_chars: 2
     max_chars: 64
-    allowed_chars: "[0-9a-zA-Z _\\-]*"
+    allowed_chars: "[0-9a-zA-Z _-]*"
     default_color: '&8'
     noname_formated: '&8WITHOUT NAME'
+    unicodeblock: '' # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
