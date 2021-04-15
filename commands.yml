@@ -1004,6 +1004,27 @@ Commands:
             on_help: ''
             on_success: ''
             on_error: ''
+      openchest:
+        permission: 'uclans.admin.openchest'
+        no_permission_message: '%tag% &cYou dont have permission for this.'
+        alias: 'openchest'
+        show:
+            on_help: ' &4/uclan openchest <tag> &7-&e Open Clan Chest.'
+            on_help_json:
+              hover_text: '&aClick to open clan chest'
+              click_type: 'SUGGEST_COMMAND'
+              click_action: '/uclan openchest <tag>'
+            on_success: '%tag% &aYou opened a clan chest.'
+            on_error: '%tag% &cThere was an error opening the clan chest..'
+            on_usage: '%tag% &cUse &4/uclan openchest <tag>'
+            raw_base_color: 'DARK_RED'
+        sound:
+            on_help: ''
+            on_success: ''
+            on_error: ''
+            extra:
+              volume: 10
+              pitch: 1
       globalff:
         permission: 'uclans.admin.globalff'
         no_permission_message: '%tag% &cYou dont have permission for this.'
