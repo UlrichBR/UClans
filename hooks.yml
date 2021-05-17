@@ -1,0 +1,9 @@
+#Addons and Hooks
+Hooks:
+  ChestClan-Addon: true
+  Vault: true
+  PlaceholderAPI: true
+  ProtocolLib: true
+  SuperVanish_PremiumVanish: true
+  BankClan-Addon: true
+  GuestClan-Addon: true

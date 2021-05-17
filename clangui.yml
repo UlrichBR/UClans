@@ -1,0 +1,956 @@
+#
+#Placeholders with PlaceholderAPI:
+#CLAN
+# %uclans_hasclan%
+# %uclans_hasclan_formated%
+# %uclans_tag_nocolor%
+# %uclans_tag_color%
+# %uclans_tag_formated%
+# %uclans_desc_nocolor%
+# %uclans_desc_color%
+# %uclans_leader%
+# %uclans_creation_date%
+# %uclans_creation_date_formated%
+# %uclans_clanid%
+# %uclans_clan_kills%
+# %uclans_clan_deaths%
+# %uclans_clan_souls%
+# %uclans_clan_kdr%
+# %uclans_clan_home%
+# %uclans_clan_members%
+# %uclans_clan_onlinemembers%
+# %uclans_count_onlinemembers%
+# %uclans_clan_ally%
+# %uclans_clan_rival%
+# %uclans_count_members%
+# %uclans_name%
+# %uclans_leader%
+# %uclans_verified%
+# %uclans_bank_balance%
+# %uclans_bank_balance_formated%
+# %uclans_level%
+#GUEST
+# %uclans_guest_points%
+# %uclans_guest_finished%
+#TOP
+# %uclans_top:kdr:<num>%
+# %uclans_top:kill:<num>%
+# %uclans_top:death:<num>%
+# %uclans_top:member:<num>%
+# %uclans_top:bank:<num>%
+# %uclans_top:level:<num>%
+#PLAYER
+# %uclans_player%
+# %uclans_player_name%
+# %uclans_player_kills%
+# %uclans_player_deaths%
+# %uclans_player_souls%
+# %uclans_player_kdr%
+# %uclans_level_identifier%
+# %uclans_tag_formated_level%
+# %uclans_player_joindate%
+# %uclans_player_joindate_formated%
+# %uclans_player_lastsee%
+# %uclans_player_lastsee_formated%
+# %uclans_player_leader_yes_no%
+# %uclans_player_mod_yes_no%
+Gui:
+  toplist:
+    inventory_name: '&a&lTop List of Clans'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      '1':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGMxMWU0OWE2NDk3ZTc3YjViNDFkN2JiMzRlNTY3MzU5YWEzMjIyNTY5Y2ViOGM1MGU2M2YxYTVhZjdiZjUyOCJ9fX0=
+        data: 3
+        amount: 1
+        slot: 10
+        name: '&cTop KDR'
+        lore:
+        - ' &eClick to open the'
+        - '&elist in order of KDR.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_topkdr] 1'
+        right-action:
+        - '[opengui_topkdr] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      '2':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFmNTA1MmM3NGI3OTA1YmZmYmVmYjVjMTBiODU2NzViODk4M2VkYzllMWYyYjEwMWZmOTA2ZWI1YWMxNDQyYiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 11
+        name: '&cTop KILL'
+        lore:
+        - ' &eClick to open the'
+        - '&elist in order of KILL.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_topkill] 1'
+        right-action:
+        - '[opengui_topkill] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      '3':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGE1ZDMzYWMzZDQwNjJlOWM3YjRhNDMzN2NiZWEzZmE1MGQ1NDNhZTJlMWNkODFiNmQwNzcxOGFhZDcwOTU3MSJ9fX0=
+        data: 3
+        amount: 1
+        slot: 12
+        name: '&cTop DEATH'
+        lore:
+        - ' &eClick to open the'
+        - '&elist in order of DEATH.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_topdeath] 1'
+        right-action:
+        - '[opengui_topdeath] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      '4':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2I4NDAwN2IyMDQ5Y2Q5Y2VkNDExN2QxMDc5M2IwNzZiYTUwZWJmNDQwNWU2Zjk2ZjU5ZjY3NTliYWJkMzE4NiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 13
+        name: '&cTop BANK'
+        lore:
+        - ' &eClick to open the'
+        - '&elist in order of BANK.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_topbank] 1'
+        right-action:
+        - '[opengui_topbank] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      '5':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxZTFlODJiZjQzNzhhN2IxMzkyMjliNTYxYzhmMDExOWJmNTY1NTEyODAxNGQzYzU0MzlkODk4MzAzZjFiMCJ9fX0=
+        data: 3
+        amount: 1
+        slot: 14
+        name: '&cTop MEMBER'
+        lore:
+        - ' &eClick to open the'
+        - '&elist in order of MEMBER.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_topmember] 1'
+        right-action:
+        - '[opengui_topmember] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      '6':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        data: 3
+        amount: 1
+        slot: 15
+        name: '&cTop Level'
+        lore:
+        - ' &eClick to open the'
+        - '&elist of top Clan level.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_toplevel] 1'
+        right-action:
+        - '[opengui_toplevel] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJmZTVkOTE4YTM2NDhmMjM3OTk0MjQ0NzI0MGE0NzI1ZWQxOTY5NjhmZTI3M2QzNGJiZGNkZWQwNzJjMSJ9fX0
+      '7':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNlMWNiYjFmNDNmYTUxMzA4Yzg0Y2E1ZjNhNTUwMTc4ODE1ODFkZGI5NWZkM2M2OGE5ZGRhMjA5ZDA0NTVhYiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 16
+        name: '&cVerified'
+        lore:
+        - ' &eClick to open the'
+        - '&elist of verified Clans.'
+        - ' '
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_clans] 1'
+        right-action:
+        - '[opengui_clans] 1'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ' &eClick to go back'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_hasclan'
+        right-action:
+        - '[opengui] index_hasclan'
+  index_noclan:
+    inventory_name: '&a&lClan Menu &c(without Clan)'
+    inventory_rows: 3
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      '1':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTNlMWNiYjFmNDNmYTUxMzA4Yzg0Y2E1ZjNhNTUwMTc4ODE1ODFkZGI5NWZkM2M2OGE5ZGRhMjA5ZDA0NTVhYiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 10
+        name: '&cYou dont have a Clan'
+        lore:
+        - ' &eClick to create a Clan.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan create'
+        right-action:
+        - '[closegui]'
+        - '[player] /clan create'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      clans:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM4Y2YzZjhlNTRhZmMzYjNmOTFkMjBhNDlmMzI0ZGNhMTQ4NjAwN2ZlNTQ1Mzk5MDU1NTI0YzE3OTQxZjRkYyJ9fX0=
+        data: 3
+        amount: 1
+        slot: 13
+        name: '&aAll Clans'
+        lore:
+        - ' &eClick to open the clan list menu.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_clans] 1'
+        right-action:
+        - '[opengui_clans] 1'
+      commands:
+        sound-click: ''
+        itemstack: PAPER
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 16
+        name: '&aCommand List and Help'
+        lore:
+        - ' &eClick to see the complete list'
+        - '&eof commands for Clans and Land.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan help'
+        right-action:
+        - '[closegui]'
+        - '[player] /clan help'
+  index_actions:
+    inventory_name: '&a&lClan Actions Menu'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      modtag:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        name: '&aChange the clan Tag'
+        lore:
+        - ' &eClick to change the Clan tag'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan modtag'
+        right-action:
+        - '[closegui]'
+        - '[player] clan modtag'
+      desc:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 11
+        name: '&aChanging the Clan Description'
+        lore:
+        - ' &eClick to change the Clan description.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan desc'
+        right-action:
+        - '[closegui]'
+        - '[player] clan desc'
+      ff:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aFire friend'
+        lore:
+        - ' &eClick to turn on/off the Friendly Fire'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan ff'
+        right-action:
+        - '[closegui]'
+        - '[player] clan ff'
+      sethome:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 13
+        name: '&aSet the Clan Home'
+        lore:
+        - ' &eClick to set the Clan Home'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan sethome'
+        right-action:
+        - '[closegui]'
+        - '[player] clan sethome'
+      delete:
+        sound-click: ''
+        itemstack: STAINED_CLAY
+        skullowner: ''
+        texture: ''
+        data: 14
+        amount: 1
+        slot: 16
+        name: '&c&lDelete the clan'
+        lore:
+        - ' &eClick to delete the clan'
+        - ' &cOnly the Leader can do this!'
+        - ' &cThis will remove the protection from your land'
+        - ' &cThis requires confirmation in CHAT!'
+        - ' '
+        - ' &cCaution, this action cannot be undone!'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan disband'
+        right-action:
+        - '[closegui]'
+        - '[player] clan disband'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ' &eClick to go back'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_hasclan'
+        right-action:
+        - '[opengui] index_hasclan'
+  index_members:
+    inventory_name: '&a&lClan Members Menu'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      list:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQxZmFjNmIyYTgyODg1ODk1YzVhN2I2OTc2OWE4NWFmOTBhZmRkOGMzZDNhYjUxOTRjYzU3ODU5MTBiZDM0NSJ9fX0=
+        data: 3
+        amount: 1
+        slot: 10
+        name: '&aMember List'
+        lore:
+        - ' &eClick to view the list of members'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_members] 1'
+        right-action:
+        - '[opengui_members] 1'
+      invite:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aInvite players'
+        lore:
+        - ' &eClick to invite new members'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan invite'
+        right-action:
+        - '[closegui]'
+        - '[player] clan invite'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ' &eClick to go back'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_hasclan'
+        right-action:
+        - '[opengui] index_hasclan'
+  index_hasclan:
+    inventory_name: '&a&lClan Menu'
+    inventory_rows: 6
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      '1':
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        banner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDAxYWZlOTczYzU0ODJmZGM3MWU2YWExMDY5ODgzM2M3OWM0MzdmMjEzMDhlYTlhMWEwOTU3NDZlYzI3NGEwZiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 10
+        name: '&aClan %uclans_tag_color%'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action: [
+          ]
+        right-action: [
+          ]
+        lore:
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Clan Level: &a%uclans_level%'
+        - ' &7Bank: &a$%uclans_bank_balance%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Name: &b%uclans_name%'
+        - ' &7Desc: &b%uclans_desc_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Creation date: &b%uclans_creation_date_formated%'
+        - ' &7Verified: &b%uclans_verified%'
+        - ' &7Kdr: &b%uclans_clan_kills%&8/&b%uclans_clan_deaths% &8(%uclans_clan_kdr%)'
+        - ' &7Members: &b%uclans_count_members%'
+        - ' &7Allies: &b%uclans_clan_ally%'
+        - ' &7Rivals: &b%uclans_clan_rival%'
+      guest:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTQxOWMzNTA0ZjY2ODRiMGE1NWZkMDY5Y2NhZGUyZWI2NTk3MjRjYThiYjEwYzIwZjJkZTUwNWFhNGMyZGVmYiJ9fX0=
+        data: 3
+        amount: 1
+        slot: 12
+        name: '&aClan Guest'
+        lore:
+        - ' &7Guest Points: &a%uclans_guest_points%'
+        - ' &7Completed Guests: &a%uclans_guest_finished%'
+        - ' &7Clan Level: &a%uclans_level%'
+        - ' &eClick to open guest menu'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[dispatch] /clan guest'
+        right-action:
+        - '[closegui]'
+        - '[dispatch] /clan guest'
+      membros:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQxZmFjNmIyYTgyODg1ODk1YzVhN2I2OTc2OWE4NWFmOTBhZmRkOGMzZDNhYjUxOTRjYzU3ODU5MTBiZDM0NSJ9fX0=
+        data: 3
+        amount: 1
+        slot: 14
+        name: '&aClan Members'
+        lore:
+        - ' &eClick to open the members menu.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_members'
+        right-action:
+        - '[opengui] index_members'
+      rival:
+        sound-click: ''
+        itemstack: GOLD_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 15
+        name: '&aRivalries'
+        lore:
+        - ' &eClick to open the rivalries menu.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_rival'
+        right-action:
+        - '[opengui] index_rival'
+      ally:
+        sound-click: ''
+        itemstack: DIAMOND_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 16
+        name: '&aAlliances'
+        lore:
+        - ' &eClick to open the lliances menu.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_ally'
+        right-action:
+        - '[opengui] index_ally'
+      home:
+        sound-click: ''
+        itemstack: BOW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 28
+        name: '&aTeleport to Home'
+        lore:
+        - ' &eClick to go to the clans home.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan home'
+        right-action:
+        - '[closegui]'
+        - '[player] /clan home'
+      actions:
+        sound-click: ''
+        itemstack: REDSTONE_COMPARATOR
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 29
+        name: '&aActions'
+        lore:
+        - ' &eClick to open.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_actions'
+        right-action:
+        - '[opengui] index_actions'
+      war:
+        sound-click: ''
+        itemstack: DIAMOND_SWORD
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&aClan War'
+        lore:
+        - ' &eClick to open.'
+        enchants:
+        - PROTECTION_ENVIRONMENTAL;1
+        flags:
+        - HIDE_ENCHANTS
+        left-action:
+        - '[player] /clan war send'
+        right-action:
+        - '[player] /clan war send'
+      commands:
+        sound-click: ''
+        itemstack: PAPER
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 8
+        name: '&aCommand List and Help'
+        lore:
+        - ' &eClick to see the complete list'
+        - '&eof commands for Clans and Land.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] /clan help'
+        right-action:
+        - '[closegui]'
+        - '[player] /clan help'
+      clans:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: ''
+        texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDM4Y2YzZjhlNTRhZmMzYjNmOTFkMjBhNDlmMzI0ZGNhMTQ4NjAwN2ZlNTQ1Mzk5MDU1NTI0YzE3OTQxZjRkYyJ9fX0=
+        data: 3
+        amount: 1
+        slot: 34
+        name: '&aAll Clans'
+        lore:
+        - ' &eClick to open the clan list menu.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      info:
+        sound-click: ''
+        itemstack: STAINED_GLASS_PANE
+        skullowner: ''
+        texture: ''
+        data: 5
+        amount: 1
+        slot: 45
+        name: '&aAddons'
+        lore:
+        - ' &aAddons List'
+        enchants: [
+          ]
+        flags: [
+          ]
+        imitate_slots:
+        - '53'
+      chest:
+        sound-click: ''
+        itemstack: Chest
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 46
+        name: '&aShared Chest'
+        lore:
+        - ' &eClick to open shared Chest.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[dispatch] /clan chest'
+        right-action:
+        - '[closegui]'
+        - '[dispatch] /clan chest'
+      bank:
+        sound-click: ''
+        itemstack: SUNFLOWER
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 47
+        name: '&aBank of Clan.'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[dispatch] /clan bank'
+        right-action:
+        - '[closegui]'
+        - '[dispatch] /clan bank'
+        lore:
+        - ' &7Bank: &a$%uclans_bank_balance%'
+        - ' &7'
+        - '&eClick to open.'
+  index_ally:
+    inventory_name: '&a&lClan Alliances Menu'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      list:
+        sound-click: ''
+        itemstack: DIAMOND_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        name: '&aAlliances List'
+        lore:
+        - ' &eClick to view the list of alliances'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_ally] 1'
+        right-action:
+        - '[opengui_ally] 1'
+      invite:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aAdd or Remove Alliances'
+        lore:
+        - ' &eClick to add or remove alliances'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] clan ally'
+        right-action:
+        - '[closegui]'
+        - '[player] clan ally'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ' &eClick to go back'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_hasclan'
+        right-action:
+        - '[opengui] index_hasclan'
+  index_rival:
+    inventory_name: '&a&lClan Rivalries Menu'
+    inventory_rows: 4
+    sound-open: ''
+    pagination: [
+      ]
+    items:
+      list:
+        sound-click: ''
+        itemstack: GOLD_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 10
+        name: '&aRivalries List'
+        lore:
+        - ' &eClick to view the list of rivalries'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui_rival] 1'
+        right-action:
+        - '[opengui_rival] 1'
+      invite:
+        sound-click: ''
+        itemstack: MAP
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 12
+        name: '&aAdd or Remove Rivalries'
+        lore:
+        - ' &eClick to add or remove rivalries'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[closegui]'
+        - '[player] clan rival'
+        right-action:
+        - '[closegui]'
+        - '[player] clan rival'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 31
+        name: '&cCome back'
+        lore:
+        - ' &eClick to go back'
+        enchants: [
+          ]
+        flags: [
+          ]
+        left-action:
+        - '[opengui] index_hasclan'
+        right-action:
+        - '[opengui] index_hasclan'

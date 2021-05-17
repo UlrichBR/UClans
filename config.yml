@@ -1,0 +1,303 @@
+#
+#Placeholders with PlaceholderAPI:
+#CLAN
+# %uclans_hasclan%
+# %uclans_hasclan_formated%
+# %uclans_tag_nocolor%
+# %uclans_tag_color%
+# %uclans_tag_formated%
+# %uclans_desc_nocolor%
+# %uclans_desc_color%
+# %uclans_leader%
+# %uclans_creation_date%
+# %uclans_creation_date_formated%
+# %uclans_clanid%
+# %uclans_clan_kills%
+# %uclans_clan_deaths%
+# %uclans_clan_souls%
+# %uclans_clan_kdr%
+# %uclans_clan_home%
+# %uclans_clan_members%
+# %uclans_clan_onlinemembers%
+# %uclans_count_onlinemembers%
+# %uclans_clan_ally%
+# %uclans_clan_rival%
+# %uclans_count_members%
+# %uclans_name%
+# %uclans_leader%
+# %uclans_verified%
+# %uclans_bank_balance%
+# %uclans_bank_balance_formated%
+# %uclans_level%
+#GUEST
+# %uclans_guest_points%
+# %uclans_guest_finished%
+#TOP
+# %uclans_top:kdr:<num>%
+# %uclans_top:kill:<num>%
+# %uclans_top:death:<num>%
+# %uclans_top:member:<num>%
+# %uclans_top:bank:<num>%
+# %uclans_top:level:<num>%
+#PLAYER
+# %uclans_player%
+# %uclans_player_name%
+# %uclans_player_kills%
+# %uclans_player_deaths%
+# %uclans_player_souls%
+# %uclans_player_kdr%
+# %uclans_level_identifier%
+# %uclans_tag_formated_level%
+# %uclans_player_joindate%
+# %uclans_player_joindate_formated%
+# %uclans_player_lastsee%
+# %uclans_player_lastsee_formated%
+# %uclans_player_leader_yes_no%
+# %uclans_player_mod_yes_no%
+Plugin:
+  check_for_updates: true
+ 
+###### About multiserver mode #####
+# The multiserver mode synchronizes user data at a high frequency, so if you don't use the 
+#same database on multiple servers, leave this "false" to save memory.
+# Remember, if you don't use multiserver mode, use different databases for each server.
+# Holograms are not synchronized.
+#Clan bases are not yet being separated
+#The 'server' needs to be unique for each minigame and if it is blank the bungeecord mode is turned off.
+###### About multiserver mode #####
+ 
+Multiserver: false
+Server: ''
+ 
+Config:
+  date_format: dd/MM/yyyy HH:mm
+  disable_command_chat_interactions: false
+  # use '' to disable confirmation
+  confirm: CONFIRM
+  confirm_case_sensitive: true
+  teleport_delay: 3
+  aliases_tabcomplete: true
+  commands_tabcomplete: true
+  help_max_result: 11
+  logs:
+    clan: true
+    stacktrace: true
+ 
+War:
+  amount_format: 1|2|3|5|10|64
+  allowed_commands:
+  - /clan
+  - /uclan
+  - /.
+  - /clanchat
+ 
+Hologram:
+  enabled: true
+  prefix: uc_
+  maxlist: 10
+  ajust-Y: 2.0
+  header: '&d&lTop %amount% %top_type% Clans.'
+  footer: '&eFor more use &b/clan list'
+  format: '&6&l%num%° &7- &a%uclans_tag_color% &7- %uclans_count_members% member(s) &7- &b%uclans_clan_kills%&8/&b%uclans_clan_deaths% &8(%uclans_clan_kdr%)'
+  kdr_format: '&6&l%num%° &7- &a%uclans_tag_color% &7- &b%uclans_clan_kills%&8/&b%uclans_clan_deaths% &8(%uclans_clan_kdr%)'
+  kill_format: '&6&l%num%° &7- &a%uclans_tag_color% &7- &b%uclans_clan_kills% Kill(s)'
+  death_format: '&6&l%num%° &7- &a%uclans_tag_color% &7- &b%uclans_clan_deaths% Death(s)'
+  member_format: '&6&l%num%° &7- &a%uclans_tag_color% &7- %uclans_count_members% member(s)'
+  bank_format: '&6&l%num%° &7- &a%uclans_tag_color% &7- &a$%uclans_bank_balance%'
+  tasks:
+    # IN SECONDS
+    holosave_start: 300
+    # IN SECONDS
+    holosave: 300
+    # IN SECONDS
+    holorefresh_start: 5
+    # IN SECONDS
+    holorefresh: 300
+    #IN TICKS (20 TICKS = 1 SECOND, RECOMENDED 5~10)
+    holospawnafter: 5
+ 
+Cosmetic:
+   # to disable cosmetics use item: {}
+  item:
+    material: STAINED_GLASS_PANE
+    data: 7
+    amount: 1
+    name: ' '
+    lore:
+    - ''
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - ''
+    nbt:
+      string:
+      - NbtExample:teste
+      int:
+      - NbtExample2:0001
+ 
+Wand:
+   # to disable cosmetics use item: {}
+  item:
+    material: STICK
+    data: 0
+    amount: 1
+    name: '&4UltimateClans &6&lWAND'
+    lore:
+    - ' '
+    - ' &eThis item should be used to mark'
+    - '&eregion points for region.'
+    - ' '
+    - ' &bLEFT-CLICK &7to mark point &b#1'
+    - ' &bRIGHT-CLICK &7to mark point &b#2'
+    flags:
+    - HIDE_ENCHANTS
+    enchants:
+    - PROTECTION_ENVIRONMENTAL;2
+    nbt:
+      string:
+      - NbtExample:teste
+      int:
+      - NbtExample2:0001
+ 
+Gui:
+  help_gui: true
+  hasclan: index_hasclan
+  noclan: index_noclan
+ 
+Clan:
+  disable_allypvp_onff: true
+  disable_shared_chat_ally: false
+  disabled_command_worlds:
+  - disabled_worlds
+  forced_ff_worlds:
+  - disabled_worlds
+  forced_ff_regions:
+  - forced_worlds
+  war_invite:
+     # IN SECONDS
+    max_time_seconds: 60
+  ally_invite:
+     # IN SECONDS
+    max_time_seconds: 60
+  invite:
+    # IN SECONDS
+    max_time_seconds: 60
+    allowed_chars: '[0-9a-zA-Z_ -]*'
+  join_leave_clan:
+    # INSECONDS
+    delay: 1
+    #example commands, Only %clantag% and %player% can be used here
+    join_commands:
+    - lp user %player% permission set uclans.clan
+    - uking addcoin %clantag% 500
+    #example commands, Only %clantag% and %player% can be used here
+    leave_commands:
+    - lp user %player% permission unset uclans.clan
+  chat:
+    #Any placeholder can be used with PAPI.
+    format: ' &d%uclans_level_identifier% &5%player%&d: &d%chat_message%'
+  verify:
+    always_verified: true
+    list_unverified: true
+  #points added to the clan and player KDR when the events below occur, (kills/deaths = ratio)
+  kills:
+    neutral: 1
+    ally: 0
+    rival: 3
+  match:
+    rival:
+      add: add
+      remove: remove
+    ally:
+      add: add
+      remove: remove
+      accept: accept
+      deny: deny
+    war:
+      send: send
+      accept: accept
+      deny: deny
+      join: join
+  prices:
+    #Default VAULT, if "false" does not charge player values.
+    enabled: true
+    desc: 0.0
+    create: 1000.0
+    invite: 0.0
+    deny: 0.0
+    join: 0.0
+    leave: 0.0
+    kick: 0.0
+    promote: 0.0
+    demote: 0.0
+    disband: 0.0
+    sethome: 0.0
+    home: 0.0
+    modtag: 0.0
+    # ALL RIVAL COMMANDS
+    rival: 0.0
+    # ALL ALLY COMMANDS
+    ally: 0.0
+    togglechat: 0.0
+    toggleff: 0.0
+    name: 0.0
+    chest: 0.0
+    war: 100.0
+    bank: 0.0
+  limits:
+     # NUM MAX OF PLAYERS BY CLAN
+    max_by_clan: 10
+  tasks:
+    update_list:
+      #IN SECONDS
+      start: 5
+      #IN SECONDS
+      next: 300
+    update_invite:
+      #IN SECONDS
+      start: 5
+      #IN SECONDS
+      next: 300
+  level:
+    leader:
+      identifier: '&6**&r'
+    mod:
+      identifier: '&2*&r'
+  list:
+    max_pag: 10
+    max_list: 10
+    use_next_prev: false
+  tag:
+    allow_color: true
+    min_chars: 2
+    max_chars: 4
+    allowed_chars: '[0-9a-zA-Z_-]*'
+    default_color: '&8'
+    start: '&f['
+    end: '&f]&r'
+    noclan_formated: '&4WITHOUT CLAN'
+    # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
+    unicodeblock: ''
+  desc:
+    allow_color: true
+    min_chars: 2
+    max_chars: 32
+    allowed_chars: '[0-9a-zA-Z_ -]*'
+    default_color: '&8'
+    nodesc_formated: '&8WITHOUT DESC'
+    # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
+    unicodeblock: ''
+  name:
+    allow_color: true
+    min_chars: 2
+    max_chars: 32
+    allowed_chars: '[0-9a-zA-Z_ -]*'
+    default_color: '&8'
+    noname_formated: '&8WITHOUT NAME'
+    # example, for russian character use 'CYRILLIC', all list in https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.UnicodeBlock.html
+    unicodeblock: ''
+ 
+# DONT CHANGE THIS
+version:
+  d: 2.2.8
+  r: true

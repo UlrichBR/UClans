@@ -1,0 +1,1079 @@
+Gui:
+  members:
+    inventory_name: '&a&lMember List [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: SKULL_ITEM
+        skullowner: '%uclans_player%'
+        texture: ''
+        data: 3
+        amount: 1
+        slot: 0
+        name: '&a%uclans_player%'
+        lore:
+        - ''
+        - ' &7Leader: &b%uclans_player_leader_yes_no%'
+        - ' &7Moderators: &b%uclans_player_mod_yes_no%'
+        - ' &7Nickname: &b%uclans_player%'
+        - ' &7Kdr: &b%uclans_player_kills%&8/&b%uclans_player_deaths% &8(%uclans_player_kdr%)'
+        - ' &7Entry into: &b%uclans_player_joindate_formated%'
+        - ' &7Last Seen: &b%uclans_player_lastsee_formated%'
+        - ' '
+        - ' &cLEFT CLICK to /tpa'
+        - ' &cRIGHT CLICK to kick the player'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[closegui]'
+        - '[player] /tpa %uclans_player%'
+        right-action:
+        - '[closegui]'
+        - '[player] /clan kick %uclans_player%'
+        nbt:
+          string:
+          - NbtExample:teste
+          int:
+          - NbtExample2:0001
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_members] %prev%'
+        right-action:
+        - '[opengui_members] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_members] %next%'
+        right-action:
+        - '[opengui_members] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_members'
+        right-action:
+        - '[opengui] index_members'
+  clans:
+    inventory_name: '&a&lVerified clans [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %prev%'
+        right-action:
+        - '[opengui_clans] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %next%'
+        right-action:
+        - '[opengui_clans] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  toplevel:
+    inventory_name: '&a&lTop LEVEL [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_toplevel] %prev%'
+        right-action:
+        - '[opengui_toplevel] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_toplevel] %next%'
+        right-action:
+        - '[opengui_toplevel] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  topkdr:
+    inventory_name: '&a&lTop KDR [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topkdr] %prev%'
+        right-action:
+        - '[opengui_topkdr] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topkdr] %next%'
+        right-action:
+        - '[opengui_topkdr] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  topkill:
+    inventory_name: '&a&lTop KILL [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topkill] %prev%'
+        right-action:
+        - '[opengui_topkill] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topkill] %next%'
+        right-action:
+        - '[opengui_topkill] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  topdeath:
+    inventory_name: '&a&lTop DEATH [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topdeath] %prev%'
+        right-action:
+        - '[opengui_topdeath] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topdeath] %next%'
+        right-action:
+        - '[opengui_topdeath] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  topmember:
+    inventory_name: '&a&lTop Member [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topmember] %prev%'
+        right-action:
+        - '[opengui_topmember] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topmember] %next%'
+        right-action:
+        - '[opengui_topmember] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  topbank:
+    inventory_name: '&a&lTop Bank [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: IRON_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topbank] %prev%'
+        right-action:
+        - '[opengui_topbank] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_topbank] %next%'
+        right-action:
+        - '[opengui_topbank] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] toplist'
+        right-action:
+        - '[opengui] toplist'
+      extra:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back.'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_noclan'
+        right-action:
+        - '[opengui] index_noclan'
+  rival:
+    inventory_name: '&a&lRival List [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: GOLD_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %prev%'
+        right-action:
+        - '[opengui_clans] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %next%'
+        right-action:
+        - '[opengui_clans] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_rival'
+        right-action:
+        - '[opengui] index_rival'
+  ally:
+    inventory_name: '&a&lAlly List [%page%/%pages%]'
+    inventory_rows: 5
+    sound-open: ''
+    max_items: 27
+    items:
+      current:
+        sound-click: ''
+        itemstack: DIAMOND_HELMET
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 0
+        name: '&aClan %uclans_tag_color%'
+        lore:
+        - ''
+        - ' &eClan Information'
+        - ' &7'
+        - ' &7Level: &a%uclans_level%'
+        - ' &7'
+        - ' &7Tag: &b%uclans_tag_color%'
+        - ' &7Leader: &b%uclans_leader%'
+        - ' &7Members: &b%uclans_count_members%'
+        - ''
+        - ' &eRight-Click to view info.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        right-action:
+        - '[closegui]'
+        - '[player] clan info %uclans_tag_nocolor%'
+      prev:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 38
+        name: '&aPrevious page'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %prev%'
+        right-action:
+        - '[opengui_clans] %prev%'
+      next:
+        sound-click: ''
+        itemstack: INK_SACK
+        skullowner: ''
+        texture: ''
+        data: 8
+        amount: 1
+        slot: 42
+        name: '&aNext page'
+        lore:
+        - ''
+        - ' &eClick to proceed.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui_clans] %next%'
+        right-action:
+        - '[opengui_clans] %next%'
+      back:
+        sound-click: ''
+        itemstack: ARROW
+        skullowner: ''
+        texture: ''
+        data: 0
+        amount: 1
+        slot: 40
+        name: '&cCome back'
+        lore:
+        - ''
+        - ' &eClick to Come back.'
+        enchants:
+        - ''
+        flags:
+        - ''
+        left-action:
+        - '[opengui] index_ally'
+        right-action:
+        - '[opengui] index_ally'

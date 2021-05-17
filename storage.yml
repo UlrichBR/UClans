@@ -1,0 +1,17 @@
+#another comment
+Storage:
+  #mysql/yaml/sqlite
+  type: yaml
+  prefix: uc_
+  mysql:
+    host: localhost
+    user: YOU-USER
+    pass: YOU-PASSWORD
+    port: 3306
+    base: YOU-BASE-PRE-CREATED
+  databases:
+    clan_table: uclans-clans
+    player_table: uclans-players
+    holograms_table: uclans-holos
+    bases_table: uclans-bases
+    sync_table: uclans-sync
