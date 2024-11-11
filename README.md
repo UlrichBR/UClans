@@ -1,3 +1,3 @@
-# UClansV7
+# UClans
 
-API: https://github.com/UlrichBR/UClansV7-API
+API: https://github.com/UlrichBR/UClans-API
