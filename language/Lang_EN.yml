@@ -14,6 +14,8 @@ LANGUAGE:
   has globalff: '%tag% <green>Global friendly fire is now on!'
   no permission: '%tag% <red>You do not have permission'
   no permission gui: <red>Without permission.
+  text empty: <red>The text is empty.
+  anvil error: <red>An error occurred.
   chest extra buyed update: '%tag% <aqua>{player_other} <green>has purchased a new Chest for the Clan.'
   export same storage: '%tag% <red>You must choose a different storage than the current one to export.'
   export no data: '%tag% <red>There is currently no data to export.'
@@ -40,6 +42,7 @@ LANGUAGE:
   clan allypvp disabled: '%tag% <red>PVP between allies is off.'
   clan player blocked invite gui: <red>Disabled clan invites.
   clan player blocked invite: '%tag% <red>This player has disabled clan invites.'
+  clan player has noprofile: '%tag% <red>This player does not appear to have a profile on this server.'
   clan player accept success invite gui: <green>Invitation accepted.
   clan player accept success invite: '%tag% <red>You have successfully accepted the invitation.'
   clan player accept error invite gui: <red>Error to accept.
@@ -71,7 +74,7 @@ LANGUAGE:
   clan max members: <red>This Clan already has the maximum number of players.
   clan max members level: '%tag% <red>This clan already has the maximum number of players for the current level.'
   clan player kicked out: '%tag% <green>You have been kicked out of the clan <aqua>%uclans_tag_nocolor%.'
-  clan player kicked outby: '%tag% <dark_red>{player_other} <yellow>has been kicked out of the clan by <green>%uclans_player_name%'
+  clan player kicked outby: '%tag% <dark_red>{player_other} <yellow>has been kicked out of the clan by <green>{player_sender}'
   clan tag equals: '%tag% <red>Unchanged TAG, appears to be the same.'
   clan name equals: '%tag% <red>Unchanged NAME, appears to be the same.'
   clan already rival: '%tag% <red>This Clan is already a rival.'
@@ -114,6 +117,8 @@ LANGUAGE:
   clan settings clanff: <aqua>Clan FF
   clan settings opened: <aqua>Clan open to all
   clan settings publichomes: <aqua>Homes as public
+  clan settings receivemailallies: <aqua>Mail from allies
+  clan settings receivemailall: <aqua>Mail from all
   clan join error gui: <dark_red>Error entering.
   clan join success gui: <green>Successfully joined the clan.
   clan delete error gui: <dark_red>Error deleting!
@@ -138,6 +143,7 @@ LANGUAGE:
   banner upload success: '%tag% <aqua>The new clan banner has been saved!'
   mail new received: '%tag% <green>Your clan has received a new mail.'
   mail allie disabled: '%tag% <red>The allies clan has disabled this option.'
+  mail all disabled: '%tag% <red>The clan has disabled this option.'
   mail readstate true: '*'
   mail readstate false: '!'
   mail readstate formated true: <green>*</green>
@@ -156,10 +162,15 @@ LANGUAGE:
   - ' <white>Name: <aqua>%uclans_home:{name}:name%'
   - ' <white>Server: <aqua>%uclans_home:{name}:server%'
   - ' <white>Location: <aqua>%uclans_home:{name}:location%'
+  - ' <white>Requires Passwd: <aqua>%uclans_home:{name}:has_passwd%'
   - ''
   - <click:suggest_command:"/{_clan} {_home} {_teleport} %uclans_home:{name}:name%"><hover:show_text:'<green>Click to teleport.'><aqua>[Teleport]</hover></click>
   help clan member list header: '<newline>%uclans_tag_color%<blue><bold> member list:'
   help clan member list format: '<click:suggest_command:"/{_clan} {_profile} {_view} %uclans_player_realname% "><hover:show_text:''<green>Click to view.''> <gray>- %uclans_player_role_formated% <green>%uclans_player_nickname% <gray>| <white>Joined: <green>%uclans_player_joindate_formated% | <white>KDR: <green>%uclans_player_kdr%</hover></click>'
+  help clan requires passwd: '%tag% <red>This Home requires a password to use.'
+  help clan requires passwd gui: <red>Requires a password
+  help clan wrong passwd: '%tag% <red>The password appears to be wrong...'
+  help clan wrong passwd gui: <red>Wrong password.
   help clan permissions view header: '<newline>%uclans_tag_color%<blue><bold> permission list:'
   help clan permissions role view format: '<blue><bold>|</bold> <blue>%role%: '
   help clan permissions view format: ' <white>Key: <green>%key% <gray>| <white>Value: <green>%value%'
@@ -175,7 +186,7 @@ LANGUAGE:
   - ' <white>Is connected: <aqua>%uclans_haswebhook_formated%'
   - ' <white>Url: <aqua>%uclans_webhook_url%'
   help clan webhook success add: '%tag% <green>The webhook has been successfully added.'
-  help clan webhook error add: '%tag% There was an error adding the webhook, check the url! (format: https://discord.com/api/webhooks/{channel}/{token})'
+  help clan webhook error add: '%tag% There was an error adding the webhook, check the url! (format: https://discord.com/api/webhooks/{channel}/{token} or webhooks/{channel}/{token})'
   help clan webhook success remove: '%tag% <green>Webhook successfully removed'
   help clan webhook success remove gui: <green>Successfully removed
   help clan webhook error remove: '%tag% <red>Error removing webhook, try again.'
@@ -190,9 +201,32 @@ LANGUAGE:
   help mail format: '%uclans_mail:{id}:readstate_formated% <hover:show_text:''<green>%uclans_mail:{id}:text%''><gray>- <white>Origin: <aqua>%uclans_mail:{id}:from%<gray> | <white>Date: <aqua>%uclans_mail:{id}:date% <dark_gray>(Expires: %uclans_mail:{id}:expires%)<newline>  <aqua>%uclans_mail:{id}:text%</hover>'
   mail clear success gui: <green>Successfully cleared mail
   mail clear error gui: <red>Error clearing the mail
+  mail min chars: '%tag% <red>Tour message must contain at least <aqua>{chars} <red>characters.'
   mail max chars: '%tag% <red>Your text appears to be very large!'
   mail max storage: '%tag% <red>This clan mailbox is full now!'
   mail max unread: '%tag% <red>This clan has a lot of unread messages!'
+  requires default true: <white>Requeriment <green><bold>OK</bold> <gray>(%value%)
+  requires default false: <white>Requeriment <red><bold>NO</bold> <gray>(%value%)
+  requires points true: '<white>Clan Points: <green><bold>OK</bold> <gray>(%value%)'
+  requires points false: '<white>Clan Points: <red><bold>NO</bold> <gray>(need: %value%)'
+  help requires header: '<blue><bold>Clan Level:</bold> <newline> <white>Current Level: <aqua>%uclans_level%<gray> | <white>Max Level: <aqua>%uclans_max_level%<newline> '
+  help requires format: ' <yellow><bold>Levelup requirements: '
+  help requires levelup: ' <click:suggest_command:"/{_clan} {_level} {_up} "><hover:show_text:''<green>Click to levelup.''> <green>New Level up available <yellow>[Click <aqua><bold>%uclans_level% -> %uclans_next_level%</bold></aqua><yellow>]</hover></click>'
+  help requires levelup gui: <green>Levelup available <yellow>[Click <aqua><bold>%uclans_level% -> %uclans_next_level%</bold></aqua><yellow>]
+  help requires levelup need gui: <red>There are no requirements to meet!
+  help requires levelup advance_requires gui: ' <gray>[Hidden Requirements]'
+  help requires levelup advance gui: ' <red>Advance level to view.'
+  help requires levelup success gui: <green>Successfully leveled up
+  help requires levelup error gui: <red>Error when leveling up!
+  help requires levelup surprise collected success gui: <green>Surprises successfully collected.
+  help requires levelup surprise collected success: '%tag% <green>You have successfully collected the surprise reward for your clan!'
+  help requires levelup surprise collected error gui: <red>Error collecting surprise.
+  help requires levelup surprise collected error: '%tag% <red>An error occurred while collecting the surprise reward for your clan.'
+  help requires reward already collected: <red><bold>Already collected!
+  help requires max reached: '<green>Your clan has reached the maximum level. <aqua><bold>Congratulations!!!</bold> '
+  help rewards default text: <green>Common reward
+  help rewards levelup: <green>Clan levelup to level <aqua><bold>{level}</bold></aqua>
+  help rewards surprise: <green>Surprise reward level <aqua><bold>{level}</bold></aqua>
   help clan extension not exist: '%tag% <red>This extension does not exist in the official list, see the list in <aqua>/{_uclan} {_extension} {_all}'
   help clan extension not enabled: '%tag% <red>This extension has not yet been downloaded, see all in <aqua>/{_uclan} {_extension} {_list}'
   help clan extension already enabled: '%tag% <red>This extension is already downloaded, you can check for updates using <aqua>/{_uclan} {_extension} {_update} <name>'
@@ -310,6 +344,7 @@ LANGUAGE:
   translaction is off: <red>Offline
   translaction yes: <aqua>YES
   translaction no: <red>NO
+  translaction ok: <green>OK
   translaction no clan: <red>No Clan
   translaction kill: Kill
   translaction death: Death
@@ -355,6 +390,7 @@ LANGUAGE:
   player invitation player expired: '%tag% <red>Your player invite has expired and there has been no response.'
   player invitation expired: '%tag% <red>Your invitation to join the Clan <white>%clan_tag% <red>has expired.'
   player invitation daniel: '%tag% <red>The player denied the invitation.'
+  player already invited: '%tag% <red>There is already an invitation for this player!'
   player already invited gui: <red>Invitation for player in progress!
   player invitation error: '%tag% <red>There was an error sending the invite.'
   player invitation error gui: <red>Error to sending the invite.
@@ -381,7 +417,7 @@ LANGUAGE:
   top war format: '<aqua>%num%: <gray>| <green>%uclans_tag_color% <gray>| <green>%uclans_clan_war_win%<gray>/<dark_red>%uclans_clan_war_lose%'
   top point format: '<aqua>%num%: <gray>| <green>%uclans_tag_color% <gray>| <white>Point: <aqua>%uclans_points%'
   clan new balance: '%tag% <green>The banks new balance sheet is <green>%uclans_money_currency%%uclans_bank_balance%<yellow>, changed by <green>%uclans_player%'
-  player reseted kdr: '%tag% <green>The player <green>%uclans_player_name% <yellow>had the KDR changed!'
+  player reseted kdr: '%tag% <green>The player <green>%uclans_player_name% <yellow>had the KDR reset!'
   clan reseted kdr: '%tag% <green>The clan <green>%uclans_tag_color% <yellow>had the KDR reset!'
   value greater than zero: '%tag% <red>Value must be greater than zero'
   clan patent change: '%tag% <yellow>The <aqua>%uclans_tag_color% <yellow>clan changed patent to <aqua>%uclans_patent_formated%'
@@ -441,7 +477,9 @@ LANGUAGE:
   clan not have points: '%tag% <red>Clan does not have points to remove'
   clan has only points: '%tag% <red>The clan has only <aqua>%num% <red>points'
   clan ally in limit: '%tag% <red>Your clan has reached the allies limit and needs to gain levels to unlock more allies, Your clans current limit is <aqua>%uclans_limit_ally%'
+  clan ally in limit gui: <red>Ally limit reached
   clan rival in limit: '%tag% <red>Your clan has reached the rivalries limit and needs to gain levels to unlock more rivalries, Your clans current limit is <aqua>%uclans_limit_rival%'
+  clan rival in limit gui: <red>Rival limit reached.
   clan feature not unlocked: '%tag% <red>Your clan does not have this feature available, this requires level <aqua>%uclans_required_level:{type}%'
   clan feature not unlocked gui: <red>Requires level <aqua>%uclans_required_level:{type}%
   clan create error: '%tag% <red>There was an error creating.'
@@ -463,6 +501,15 @@ LANGUAGE:
   new point received: '%tag% <green>Your clan received <aqua>%points% points<green>, and now has <aqua>%totalpoints% points (%reason%)'
   new point removed: '%tag% <red>Your clan lost <aqua>%points% points<red>, and now has <aqua>%totalpoints% points (%reason%)'
   new point set: '%tag% <green>Your clan points have been changed to <aqua>%totalpoints% points (%reason%)'
+  help requires levelup reward collected success gui: <green>Reward successfully collected.
+  help requires levelup reward collected success: '%tag% <green>You have successfully collected the reward!'
+  help requires levelup reward collected error gui: <red>Error collecting reward.
+  help requires levelup reward collected error: '%tag% <red>An error occurred while collecting the surprise reward.'
+  help requires rewards header: '<blue><bold>Rewards Center:</bold> <newline> <white>To claim: <aqua>%uclans_player_rewards_amount%<newline> '
+  help requires rewards format: ' <click:suggest_command:"/{_clan} {_rewards} {_collect} {id} "><hover:show_text:''<green>Click to collect.''><gray>- <aqua>{description} <gray>({date}) <yellow><bold>[Click to Collect]</bold><newline>  <white>Sender: <aqua>{sender} <gray>| <white>Rewards: <aqua>{rewards_amount}</hover></click>'
+  help player rewards prev: <click:run_command:"/{_clan} {_rewards} {_list} %page%"><hover:show_text:'<green>Click to go back.'><aqua><< Previous</hover></click>
+  help player rewards next: <click:run_command:"/{_clan} {_rewards} {_list} %page%"><hover:show_text:'<green>Click to advance.'><aqua>Next >></hover></click>
+  help player rewards separer: <gray>|
  
 # TRANSLATIONS OF GUI MENU FILES
  
@@ -523,6 +570,7 @@ GUI:
   - ' <gray>Server: <green>%uclans_home:{name}:server%'
   - ' <gray>Name: <aqua>%uclans_home:{name}:name%'
   - ' <gray>Location: <aqua>%uclans_home:{name}:location%'
+  - ' <white>Requires Passwd: <aqua>%uclans_home:{name}:has_passwd%'
   - ''
   - ' <yellow>Left-Click to teleport '
   - ' <red>Right-Click to delete.'
@@ -533,6 +581,7 @@ GUI:
   - ' <gray>'
   - ' <gray>Server: <green>%uclans_home:{name}:server%'
   - ' <gray>Name: <aqua>%uclans_home:{name}:name%'
+  - ' <white>Requires Passwd: <aqua>%uclans_home:{name}:has_passwd%'
   General clan_delhome_confirm title: <red>Confirm delhome <dark_red>%home_name% <red>?
   General clan_delhome_confirm items fill name: ' '
   General clan_delhome_confirm items fill lore: [
@@ -641,6 +690,13 @@ GUI:
   - ' <gray>Members: <aqua>%uclans_count_members%'
   - ' '
   - ' <yellow>Click to open the members menu.'
+  General clan_home items levelup name: <green>Clan Levelup
+  General clan_home items levelup lore:
+  - ' '
+  - ' <gray>Current: <aqua>%uclans_level%<gray>/<aqua>%uclans_max_level%'
+  - ' <gray>Requirements for the next: <aqua>%uclans_has_next_requeriments_level_formated%'
+  - ' '
+  - ' <yellow>Click to open.'
   General player_profile title: <blue>Profile <gray>| <green>%uclans_player%
   General player_profile items head name: <green>%uclans_player%
   General player_profile items head lore:
@@ -984,6 +1040,15 @@ GUI:
   - ' '
   - ' <red>When disabled, your clan'
   - <red>will not receive mail from allies.
+  General clan_actions items receivemailall name: <green>Mail from All
+  General clan_actions items receivemailall lore:
+  - ' '
+  - ' <white>State: %uclans_actions_state:RECEIVEMAILALL%'
+  - ''
+  - ' <yellow>Click to toggle '
+  - ' '
+  - ' <red>When disabled, your clan'
+  - <red>will not receive mail from All clans.
   General clan_actions items delete name: <red>Delete the clan
   General clan_actions items delete lore:
   - ' <yellow>Click to delete the clan'
@@ -995,7 +1060,7 @@ GUI:
   General clan_actions items back name: <red>Come back
   General clan_actions items back lore:
   - ' <yellow>Click to go back'
-  General clan_top title: <blue>List of Clans <gray>| <green>%current%
+  General clan_top title: <blue>List of Clans <gray>| <green>%current% <gray>| <aqua>{page}<gray>/<aqua>{pages}
   General clan_top items fill name: ' '
   General clan_top items fill lore: [
     ]
@@ -1323,6 +1388,11 @@ GUI:
   General members items invite name: <green>Invite players
   General members items invite lore:
   - ' <yellow>Click to invite new members'
+  General members items onlines name: <green>Online players?
+  General members items onlines lore:
+  - ''
+  - ' <white>State: <red>{state}'
+  - ' <yellow>Click to filter.'
   General members items current name: <green>%uclans_player%
   General members items current lore:
   - ''
@@ -1671,7 +1741,105 @@ GUI:
   General clear_mail_confirm items cancel lore:
   - ''
   - ' <yellow>Click to cancel.'
-  General clan_rival_search title: <blue>Find for rivalries.
+  General levelup_confirm title: <red>Confirm Levelup?
+  General levelup_confirm items fill name: ' '
+  General levelup_confirm items fill lore: [
+    ]
+  General levelup_confirm items confirm name: <green>Confirm
+  General levelup_confirm items confirm lore:
+  - ''
+  - ' <red>Click to confirm.'
+  General levelup_confirm items cancel name: <green>Cancel
+  General levelup_confirm items cancel lore:
+  - ''
+  - ' <yellow>Click to cancel.'
+  General levelup_home title: <blue>Clan Levelup <gray>| <aqua>%uclans_level%<gray>/<aqua>%uclans_max_level%
+  General levelup_home items fill name: ' '
+  General levelup_home items fill lore: [
+    ]
+  General levelup_home items fill2 name: ' '
+  General levelup_home items fill2 lore: [
+    ]
+  General levelup_home items current name: '<green>Level: <aqua>{level}'
+  General levelup_home items current lore:
+  - ' '
+  - ' <white>Contains rewards: <aqua>{has_rewards}'
+  - '{REWARDS}'
+  - ' <Yellow>Levelup Requeriments:'
+  - '{REQUERIMENTS}'
+  - ''
+  - '{ACTION}'
+  General levelup_home items levelup name: '<green>Level: <aqua>{level}'
+  General levelup_home items levelup lore:
+  - ' '
+  - ' <green>Level passed successfully!'
+  - ' <yellow>Rewards have been sent to'
+  - <yellow>the collection box.
+  General levelup_home items surprise name: '<green><bold>Surprise</bold></green> <gray>(<green>Level: <aqua>{level}<gray>)'
+  General levelup_home items surprise lore:
+  - ' '
+  - ' <green>Level passed successfully!'
+  - ' <yellow>Your clan will receive a surprise reward!'
+  - ''
+  - ' <green><bold>Click to collect!'
+  General levelup_home items surprise_collected name: '<red><bold>Surprise</bold></red> <gray>(<green>Level: <aqua>{level}<gray>)'
+  General levelup_home items surprise_collected lore:
+  - ' '
+  - ' <green>Level passed successfully!'
+  - ' <yellow>Surprise reward!'
+  - ''
+  - ' <red>Already collected!'
+  General levelup_home items finallist name: '<red><bold>End Level</bold></red> <gray>(<green>Level: <aqua>{level}<gray>)'
+  General levelup_home items finallist lore:
+  - ' '
+  - ' <yellow>This is the end. Your clan has '
+  - <yellow>reached the maximum level, collect
+  - <yellow>all the rewards.
+  - ''
+  - ' <green><bold>Congratulations!'
+  General levelup_home items rewards name: <green>Claim Rewards
+  General levelup_home items rewards lore:
+  - ' '
+  - ' <white>To claim: <aqua>{amount}'
+  - ''
+  - ' <yellow>Click to open.'
+  General levelup_home items next name: <green>Next page
+  General levelup_home items next lore:
+  - ''
+  - ' <yellow>Click to proceed.'
+  General levelup_home items previous name: <green>Previous page
+  General levelup_home items previous lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General levelup_home items back name: <red>Come back
+  General levelup_home items back lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General levelup_rewards title: <blue>Rewards Center <gray>| <aqua>{amount}
+  General levelup_rewards items fill name: ' '
+  General levelup_rewards items fill lore: [
+    ]
+  General levelup_rewards items current name: <green>{description}
+  General levelup_rewards items current lore:
+  - ' '
+  - ' <white>Sender: <aqua>{sender}'
+  - ' <white>Date: <aqua>{date}'
+  - ' <white>Rewards:'
+  - '{REWARDS}'
+  - ' <green><bold>Click to collect!'
+  General levelup_rewards items next name: <green>Next page
+  General levelup_rewards items next lore:
+  - ''
+  - ' <yellow>Click to proceed.'
+  General levelup_rewards items previous name: <green>Previous page
+  General levelup_rewards items previous lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General levelup_rewards items back name: <red>Come back
+  General levelup_rewards items back lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General clan_rival_search title: <blue>Find for rivalries <gray>| <aqua>{page}<gray>/<aqua>{pages}
   General clan_rival_search items fill name: ' '
   General clan_rival_search items fill lore: [
     ]
@@ -1699,7 +1867,7 @@ GUI:
   - ' <gray>Members: <aqua>%uclans_count_members%'
   - ''
   - ' <red>Click to add.'
-  General clan_ally_search title: <blue>Find for alliances.
+  General clan_ally_search title: <blue>Find for alliances <gray>| <aqua>{page}<gray>/<aqua>{pages}
   General clan_ally_search items fill name: ' '
   General clan_ally_search items fill lore: [
     ]
@@ -1727,6 +1895,84 @@ GUI:
   - ' <gray>Members: <aqua>%uclans_count_members%'
   - ''
   - ' <red>Click to add.'
+  General anvil_clancreate title: <blue>Create a new clan!
+  General anvil_clancreate items left name: <white>Write your text above
+  General anvil_clancreate items left lore:
+  - ' <white>Write your text above'
+  General anvil_clancreate items right name: <red>Go back
+  General anvil_clancreate items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_clancreate items output name: ' '
+  General anvil_clancreate items output lore:
+  - ''
+  - ' <yellow>Click to create.'
+  General anvil_clanhomecreate title: <blue>Create a clan home!
+  General anvil_clanhomecreate items left name: <white>Write your text above
+  General anvil_clanhomecreate items left lore:
+  - ' <white>Write your text above'
+  General anvil_clanhomecreate items right name: <red>Go back
+  General anvil_clanhomecreate items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_clanhomecreate items output name: ' '
+  General anvil_clanhomecreate items output lore:
+  - ''
+  - ' <yellow>Create a new home.'
+  General anvil_changenickname title: <blue>Change nickname!
+  General anvil_changenickname items left name: <white>Write your text above
+  General anvil_changenickname items left lore:
+  - ' <white>Write your text above'
+  General anvil_changenickname items right name: <red>Go back
+  General anvil_changenickname items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_changenickname items output name: ' '
+  General anvil_changenickname items output lore:
+  - ''
+  - ' <yellow>Click to change.'
+  General anvil_clandiscordcreatewebhook title: <blue>New webhook!
+  General anvil_clandiscordcreatewebhook items left name: <white>Write your text above
+  General anvil_clandiscordcreatewebhook items left lore:
+  - ' <white>Write your text above'
+  General anvil_clandiscordcreatewebhook items right name: <red>Go back
+  General anvil_clandiscordcreatewebhook items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_clandiscordcreatewebhook items output name: ' '
+  General anvil_clandiscordcreatewebhook items output lore:
+  - ''
+  - ' <yellow>Click to create.'
+  General anvil_clanmodtag title: <blue>Change clan tag!
+  General anvil_clanmodtag items left name: <white>Write your text above
+  General anvil_clanmodtag items left lore:
+  - ' <white>Write your text above'
+  General anvil_clanmodtag items right name: <red>Go back
+  General anvil_clanmodtag items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_clanmodtag items output name: ' '
+  General anvil_clanmodtag items output lore:
+  - ''
+  - ' <yellow>Click to change clan tag.'
+  General anvil_clandesc title: <blue>Create clan desc!
+  General anvil_clandesc items left name: <white>Write your text above
+  General anvil_clandesc items left lore:
+  - ' <white>Write your text above'
+  General anvil_clandesc items right name: <red>Go back
+  General anvil_clandesc items right lore:
+  - ''
+  - ' <yellow>Click to Come back.'
+  General anvil_clandesc items output name: ' '
+  General anvil_clandesc items output lore:
+  - ''
+  - ' <yellow>Click to change clan desc.'
+  General clan_home items rewards name: <green>Rewards Center
+  General clan_home items rewards lore:
+  - ' '
+  - ' <gray>To claim: <aqua>%uclans_player_rewards_amount%'
+  - ' '
+  - ' <yellow>Click to open.'
  
  
  # TRANSLATIONS OF THE COMMANDS
@@ -1792,7 +2038,7 @@ COMMANDS:
   clan home subcommands list show on_success: '%tag% <green>Success.'
   clan home subcommands list show on_error: '%tag% <red>An error occurred while listing.'
   clan home subcommands list show on_usage: '%tag% <red>Use <aqua>/{_clan} {_home} {_list} <light_purple>(tag) <light_purple>(-gui)'
-  clan home subcommands teleport: <click:suggest_command:"/{_clan} {_home} {_teleport} "><hover:show_text:'<green>Click to teleport to home.'> <aqua>/{_clan} {_home} {_teleport} <red><name> <gray>-<yellow> Teleport to home.</hover></click>
+  clan home subcommands teleport: <click:suggest_command:"/{_clan} {_home} {_teleport} "><hover:show_text:'<green>Click to teleport to home.'> <aqua>/{_clan} {_home} {_teleport} <red><name> <light_purple>(password) <gray>-<yellow> Teleport to home.</hover></click>
   clan home subcommands teleport show on_success: '%tag% <green>Success.'
   clan home subcommands teleport show on_error: '%tag% <red>An error occurred while teleport.'
   clan home subcommands teleport show on_usage: '%tag% <red>Use <aqua>/{_clan} {_home} {_teleport} <red><name>'
@@ -1808,6 +2054,10 @@ COMMANDS:
   clan ff show on_success: '%tag% <green>Friendly Fire of Clan as changed to <aqua>%clan_ff%'
   clan ff show on_error: '%tag% <red>Error to use ff.'
   clan ff show on_usage: '%tag% <red>Use <aqua>/{_clan} {_ff}'
+  clan invite show on_help: <click:suggest_command:"/{_clan} {_invite} "><hover:show_text:'<green>Click to invite members.'> <aqua>/{_clan} {_invite} <red><name><gray>-<yellow> Invite new members.</hover></click>
+  clan invite show on_success: '%tag% <green>New invitation sent successfully, wait to accept or deny the request'
+  clan invite show on_error: '%tag% <red>There was an error sending the invitation.'
+  clan invite show on_usage: '%tag% <red>Use <aqua>/{_clan} {_invite} <red><name>'
   clan modtag show on_help: <click:suggest_command:"/{_clan} {_modtag} "><hover:show_text:'<green>Click to change clan tag.'> <aqua>/{_clan} {_modtag} <red><newtag> <gray>-<yellow> Change clan tag.</hover></click>
   clan modtag show on_success: '%tag% <green>Tag of Clan as changed to <aqua>%clan_tag%'
   clan modtag show on_error: '%tag% <red>Error when changing the clan Tag.'
@@ -1984,6 +2234,22 @@ COMMANDS:
   clan mail subcommands send show on_success: '%tag% <green>Mail sent successfully.'
   clan mail subcommands send show on_error: '%tag% <red>An error occurred while sending the mail.'
   clan mail subcommands send show on_usage: '%tag% <red>Use <aqua>/{_clan} {_mail} {_send} <red><to> <red><text>'
+  clan level show on_help: <click:run_command:"/{_clan} {_level} "><hover:show_text:'<green>Click to expand level commands.'> <aqua>/{_clan} {_level} <gray>-<yellow> Clan Level.</hover></click> <hover:show_text:'<green>With sub commands.'><green>[!]</hover>
+  clan level show on_success: '%tag% <green>Success.'
+  clan level show on_error: '%tag% <red>Error.'
+  clan level show on_usage: '%tag% <red>Use <aqua>/{_clan} {_level}'
+  clan level subcommands view: <click:suggest_command:"/{_clan} {_level} {_view} "><hover:show_text:'<green>Click to view clan level'> <aqua>/{_clan} {_level} {_view} <light_purple>(-gui) <gray>-<yellow> View clan level.</hover></click>
+  clan level subcommands view show on_success: '%tag%  <click:suggest_command:"/{_clan} {_level} {_up} "><hover:show_text:''<green>Click to levelup.''> <green>New Level up available <yellow>[CLick <aqua><bold>%uclans_level% -> %uclans_next_level%</bold></aqua><yellow>]</hover></click>'
+  clan level subcommands view show on_error: '%tag% <red>You still have requirements to meet before leveling up.'
+  clan level subcommands view show on_usage: '%tag% <red>Use <aqua>/{_clan} {_level} {_view} <light_purple>(-gui)'
+  clan level subcommands up: <click:suggest_command:"/{_clan} {_level} {_up} "><hover:show_text:'<green>Click to up clan level'> <aqua>/{_clan} {_level} {_up} <light_purple>(-gui) <gray>-<yellow> Up clan level.</hover></click>
+  clan level subcommands up show on_success: '%tag% <green>You have successfully leveled up your clan. Congratulations!'
+  clan level subcommands up show on_error: '%tag% <red>It was not possible to level up, see the requirements <click:suggest_command:"/{_clan} {_level} {_view} "><hover:show_text:''<green>Click to view.''><green><bold>[CLICKING HERE]</hover></click>'
+  clan level subcommands up show on_usage: '%tag% <red>Use <aqua>/{_clan} {_level} {_up} <light_purple>(-gui)'
+  clan level subcommands rewards: <click:suggest_command:"/{_clan} {_level} {_rewards} "><hover:show_text:'<green>Click to clean clan level'> <aqua>/{_clan} {_level} {_rewards} <light_purple>(-gui) <gray>-<yellow> View level rewards.</hover></click>
+  clan level subcommands rewards show on_success: '%tag% <green>The clan level rewards has been successfully viewed.'
+  clan level subcommands rewards show on_error: '%tag% <red>There was an error view the clan level rewards.'
+  clan level subcommands rewards show on_usage: '%tag% <red>Use <aqua>/{_clan} {_level} {_rewards} <light_purple>(-gui)'
   clan discord show on_help: <click:run_command:"/{_clan} {_discord} "><hover:show_text:'<green>Click to expand discord commands.'> <aqua>/{_clan} {_discord} <gray>-<yellow> Clan Webhook.</hover></click> <hover:show_text:'<green>With sub commands.'><green>[!]</hover>
   clan discord show on_success: '%tag% <green>Success.'
   clan discord show on_error: '%tag% <red>Error.'
@@ -2073,7 +2339,7 @@ COMMANDS:
   uclan resetclankdr show on_error: '%tag% <red>An error occurred while resetting'
   uclan resetclankdr show on_usage: '%tag% <red>Use <aqua>/{_uclan} {_resetclankdr} <red><player|tag>'
   uclan globalff show on_help: <click:suggest_command:"/{_uclan} {_globalff} "><hover:show_text:'<green>Click to toggle clan friendly fire.'> <aqua>/{_uclan} {_globalff} <gray>-<yellow> Toggle clan friendly fire.</hover></click>
-  uclan globalff show on_success: '%tag% <green>You have changed a global ff to <aqua>%globalff%'
+  uclan globalff show on_success: '%tag% <green>You have changed a global ff to <aqua>%uclans_global_ff_formated%'
   uclan globalff show on_error: '%tag% <red>Error to use globaff.'
   uclan globalff show on_usage: '%tag% <red>Use <aqua>/{_uclan} {_globalff}'
   uclan delete show on_help: <click:suggest_command:"/{_uclan} {_delete} "><hover:show_text:'<green>Click to delete a clan.'> <aqua>/{_uclan} {_delete} <red><player|tag> <gray>-<yellow> Delete a clan.</hover></click>
@@ -2152,6 +2418,18 @@ COMMANDS:
   uclan extension subcommands view show on_success: '%tag% <green>Success.'
   uclan extension subcommands view show on_error: '%tag% <aqua>There was an error viewing extensions.'
   uclan extension subcommands view show on_usage: '%tag% <aqua>Use <aqua>/{_uclan} {_extension} {_view} <red><name>'
+  clan rewards show on_help: <click:run_command:"/{_clan} {_rewards} "><hover:show_text:'<green>Click to expand rewards commands.'> <aqua>/{_clan} {_rewards} <gray>-<yellow> Player rewards.</hover></click> <hover:show_text:'<green>With sub commands.'><green>[!]</hover>
+  clan rewards show on_success: '%tag% <green>Success.'
+  clan rewards show on_error: '%tag% <red>Error.'
+  clan rewards show on_usage: '%tag% <red>Use <aqua>/{_clan} {_rewards}'
+  clan rewards subcommands list: <click:suggest_command:"/{_clan} {_rewards} {_list} "><hover:show_text:'<green>Click to list rewards'> <aqua>/{_clan} {_rewards} {_list} <light_purple>(page/-gui) <gray>-<yellow> List rewards.</hover></click>
+  clan rewards subcommands list show on_success: '%tag%  Success'
+  clan rewards subcommands list show on_error: '%tag% <red>There was an error listing your rewards.'
+  clan rewards subcommands list show on_usage: '%tag% <red>Use <aqua>/{_clan} {_rewards} {_list} <light_purple>(page/-gui)'
+  clan rewards subcommands collect: <click:suggest_command:"/{_clan} {_rewards} {_collect} "><hover:show_text:'<green>Click to collect rewards'> <aqua>/{_clan} {_rewards} {_collect} <light_purple>(id/-gui) <gray>-<yellow> Collect rewards.</hover></click>
+  clan rewards subcommands collect show on_success: '%tag% <green>You have successfully collected the reward.'
+  clan rewards subcommands collect show on_error: '%tag% <red>An error occurred while collecting the reward'
+  clan rewards subcommands collect show on_usage: '%tag% <red>Use <aqua>/{_clan} {_rewards} {_collect} <light_purple>(id/-gui)'
  
  
  # TRANSLATIONS OF THE CHAT ACTIONS
@@ -2322,6 +2600,21 @@ CHAT:
       line: <red>! <yellow>Alliance request
       subline: <yellow>Accept or Deny?
     bossbar: <red><bold>!</bold> <yellow>Alliance request received <red>({time})
+  clandiscordcreatewebhook:
+    message:
+    - ' '
+    - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
+    - <red>! <yellow>Creating webhook, write the webook url in the chat.
+    - <red>! <yellow><red>https://discord.com/api/webhooks/{channel}/{token}</red> <yellow>
+    - <red>! <yellow> or <red>webhooks/{channel}/{token}
+    - <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<green>Click to cancel, or use <aqua>/{_clan} {_cancel}"><red>[CANCEL]</red></hover></click>
+    - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
+    - ' '
+    actionbar: <red><bold>!</bold> <yellow>>Creating webhook, write in chat!
+    title:
+      line: <red>! <yellow>Creating webhook
+      subline: <yellow>Write in the chat.
+    bossbar: <red><bold>!</bold> <yellow>Creating webhook, write in chat! <red>({time})
  
  
  # TRANSLATIONS OF THE LOGGER ACTIONS
@@ -2353,3 +2646,4 @@ LOGGER:
   CLANPLAYERUNBANEVENT: <yellow>The player <green>{player_other} <yellow>has been unbaned from the clan.
   CLANFFCHANGEEVENT: <yellow>Clan friendly fire changed to <green>{status}
   CLANREGROUPSENDEVENT: <yellow>A request to regroup the clan has been sent by <green>{player_other}
+  CLANREWARDSEVENT: <yellow>The clan has unlocked rewards, check the list if you also received them!
