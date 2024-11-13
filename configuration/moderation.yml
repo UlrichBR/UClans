@@ -26,6 +26,9 @@
 # READ_MAIL - Read clan mails
 # SEND_MAIL - Send new mail
 # EDIT_MAIL - Edir mail
+# LEVEL_VIEW - View level and requeriments
+# LEVEL_UP - Upgrade clan level
+# LEVEL_REWARDS - Receive level rewards
  
 # Addon permissions are in the config.yml of each addon.
 Moderation:
@@ -33,6 +36,10 @@ Moderation:
    
   # This setting only allows you to edit roles below him, for example a load with priority 2 cannot edit loads with priority 3
   just_edit_permissions_below: true
+   
+   
+  # With this option, lower positions cannot reach higher roles such as Ban, Kick, Promote and Demote.
+  disable_actions_higher_roles: true
    
    
   # If the DEFAULT permissions are changed, the clans can update the Roles.
@@ -136,6 +143,8 @@ Moderation:
       - DEFAULT:true
       - VIEW_LOGGER:true
       - READ_MAIL:true
+      - LEVEL_VIEW:true
+      - LEVEL_REWARDS:true
       # Can the leader change these permissions?
       editable: true
       # Can it be achieved with promotion?
@@ -195,6 +204,9 @@ Moderation:
   # EDIT_MAIL - Permission to edit mail box
   # READ_MAIL - Permission to read mails
   # SEND_MAIL - Permission to send new mail
+  # LEVEL_VIEW - View level and requeriments
+  # LEVEL_UP - Upgrade clan level
+  # LEVEL_REWARDS - Receive level rewards
   permissions:
     DEFAULT:
       name: Default
@@ -244,3 +256,9 @@ Moderation:
       name: Mail-Send
     READ_MAIL:
       name: Mail-Read
+    LEVEL_VIEW:
+      name: Level-View
+    LEVEL_UP:
+      name: Level-Up
+    LEVEL_REWARDS:
+      name: Level-Rewards

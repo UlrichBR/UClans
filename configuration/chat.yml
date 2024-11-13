@@ -290,6 +290,27 @@ Chat:
     actionbar:
       enabled: true
    
+  clandiscordcreatewebhook:
+    enabled: true
+    time: 60
+    sound:
+      enabled: false
+      display: ''
+    message:
+      enabled: true
+      center: true
+    bossbar:
+      enabled: true
+      color: YELLOW
+      style: PROGRESS
+      flags: [
+        ]
+      animated: true
+    title:
+      enabled: true
+    actionbar:
+      enabled: true
+   
   clanallyreceive:
     enabled: true
     time: 60

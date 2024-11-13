@@ -97,6 +97,12 @@ Commands:
         permission: uclans.player.ff
         # in seconds
         cooldown: 0
+      invite:
+        permission: uclans.player.invite
+        # in seconds
+        cooldown: 0
+        # Enables or disables the command, this can be added to all commands.
+        enabled: false
       modtag:
         permission: uclans.player.modtag
         # in seconds
@@ -199,6 +205,18 @@ Commands:
         - clear
         - read
         - send
+      level:
+        permission: uclans.player.level
+        cooldown: 0
+        subcommands:
+        - view
+        - up
+      rewards:
+        permission: uclans.player.rewards
+        cooldown: 0
+        subcommands:
+        - list
+        - collect
     uclan:
       help:
         permission: uclans.admin.help
@@ -350,3 +368,9 @@ Commands:
     update: update
     all: all
     extension: extension
+    rewards: rewards
+    previous: previous
+    league: league
+    level: level
+    up: up
+    collect: collect

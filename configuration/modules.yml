@@ -9,6 +9,7 @@ Modules:
     - HOLOGRAMS
     - HOLOGRAPHICDISPLAYS
     - CMI
+    - FANCYHOLOGRAMS
    
   regions:
     # Extensions with REGION category
@@ -27,3 +28,20 @@ Modules:
     preference:
     - DYNMAP
     - BLUEMAP
+   
+  scoreboard:
+    # Extensions with SCOREBOARD category.
+    preference:
+    - TAB
+    - CMI
+    - FEATHERBOARD
+    - STERNALBOARD
+    - SIMPLESCORE
+   
+  internal:
+    duels: true
+    supervanish: true
+    premiumvanish: true
+    pvpmanager: true
+    cmi: true
+    deluxecombat: false

@@ -10,7 +10,9 @@ Settings:
  
 # New Item Example: (The item will be inserted in the menu "General.clan_home" )
 # It is not possible to add multiple fill items.
-# EXAMPLE
+# All clan placeholders can be used here and will be parsed for anyone who clicks.
+# To close a menu use {close_gui}.
+# MAIN PLUGIN EXAMPLE
 #Insertion:
 #  General:
 #   clan_home:
@@ -32,6 +34,31 @@ Settings:
 #          - ''
 #          click_action:
 #          - '/clan list'
+#          - '/eco give %uclans_player_realname% 1'
+#          - '{close_gui}'
+# ADDON EXAMPLE
+#  Quest:
+#   home_quest:
+#      items:
+#        newitem:
+#          clicksound: ''
+#          material: 'STONE'
+#          texture: ''
+#          data: 0
+#          model: 0
+#          amount: 1
+#          slot: 22
+#          mimeslots: []
+#          glow: true
+#          name: '<green>Item inserted'
+#          lore:
+#          - ''
+#          - ' <yellow>Inserted Item'
+#          - ''
+#          click_action:
+#          - '/clan quest abandon'
+#          - '/eco give %uclans_player_realname% 1'
+#          - '{close_gui}'
 Insertion: [
   ]
  
@@ -345,6 +372,20 @@ General:
         texture: '%uclans_banner%'
         amount: 1
         slot: 4
+      levelup:
+        clicksound: ''
+        material: ANVIL
+        glow: false
+        texture: ''
+        amount: 1
+        slot: 29
+      rewards:
+        clicksound: ''
+        material: HOPPER_MINECART
+        glow: false
+        texture: ''
+        amount: 1
+        slot: 38
       members:
         clicksound: ''
         material: PLAYER_HEAD
@@ -833,6 +874,13 @@ General:
         texture: ''
         amount: 1
         slot: 33
+      receivemailall:
+        clicksound: ''
+        material: PAPER
+        glow: false
+        texture: ''
+        amount: 1
+        slot: 33
       delete:
         clicksound: ''
         material: BARRIER
@@ -1217,6 +1265,13 @@ General:
         texture: ''
         amount: 1
         slot: 53
+      onlines:
+        clicksound: ''
+        material: SLIME_BALL
+        glow: false
+        texture: ''
+        amount: 1
+        slot: 45
       back:
         clicksound: ''
         material: IRON_DOOR

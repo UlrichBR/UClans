@@ -5,12 +5,33 @@ Banner:
    
   groups:
      
-    # Enabled all material types, and parts of materials starting or ending with name using PREFIX_partial and SUFFIX_partial
-    # Example: SUFFIX_ORE will show items ending in ORE, PREFIX_DIAMOND will show items starting with DIAMOND
-    # Filters are always required to show specific groups or items
+    # Use ALL to enable all materials.
+    # Filters are always required to show specific groups or items.
+    # PREFIX_ can be used as ex PREFIX_DIAMOND, results in all items starting with DIAMOND
+    # SUFFIX_ can be used as ex SUFFIX_BANNER, results in all items ending with BANNER
+    # Item MATERIAL can be used like ANVIL, IRON_CHESTPLATE, APPLE etc.
+    
     common:
       GROUP_1:
-      - SUFFIX_BANNER
+      - BLACK_BANNER
+      - RED_BANNER
+      - GREEN_BANNER
+      - BROWN_BANNER
+      - BLUE_BANNER
+      - PURPLE_BANNER
+      - CYAN_BANNER
+      - LIGHT_GRAY_BANNER
+      - GRAY_BANNER
+      - PINK_BANNER
+      - LIME_BANNER
+      - YELLOW_BANNER
+      - LIGHT_BLUE_BANNER
+      - MAGENTA_BANNER
+      - ORANGE_BANNER
+      - WHITE_BANNER
+      # New custom groups can be created such as GROUP_3, MyGroup etc...
+      GROUP_2:
+      - ALL
      
     # The head groups only receive the texture in base64 format
     # try to always use lowercase for the ids

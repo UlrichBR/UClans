@@ -1,7 +1,7 @@
 Storage:
   # sqlite/mysql/yaml
   # For better performance it is recommended to use MYSQL as storage.
-  type: yaml
+  type: sqlite
   mysql:
     # Only mysql
     host: localhost
@@ -26,7 +26,8 @@ Storage:
     moderation_table: uclans-moderation
     logger_table: uclans-logger
     mail_table: uclans-mail
-  'datasource ': ''
+    rewards_table: uclans-rewards
+  'datasource ': ' '
   datasource:
     mysql: jdbc:mysql://
     sqlite: 'jdbc:sqlite:'

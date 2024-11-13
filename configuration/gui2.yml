@@ -1,0 +1,362 @@
+ 
+General:
+  #ANVIL CLANCREATE
+  anvil_clancreate:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ARMOR_STAND
+        texture: ''
+        amount: 1
+        glow: true
+  #ANVIL CLANHOMECREATE
+  anvil_clanhomecreate:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ''
+        texture: '%uclans_banner%'
+        amount: 1
+        glow: true
+  #ANVIL CHANGENICKNAME
+  anvil_changenickname:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ''
+        texture: '%uclans_player_head%'
+        amount: 1
+        glow: true
+  #ANVIL CLANDISCORDCREATEWEBHOOK
+  anvil_clandiscordcreatewebhook:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ''
+        texture: '%uclans_banner%'
+        amount: 1
+        glow: true
+  #ANVIL CLANMODTAG
+  anvil_clanmodtag:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ''
+        texture: '%uclans_banner%'
+        amount: 1
+        glow: true
+  #ANVIL CLANDESC
+  anvil_clandesc:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    items:
+      left:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        amount: 1
+        glow: true
+      right:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        amount: 1
+        glow: true
+      output:
+        clicksound: ''
+        material: ''
+        texture: '%uclans_banner%'
+        amount: 1
+        glow: true
+  #Clan Logger config
+  levelup_home:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    rows: 6
+    pagesize: 24
+    items:
+      fill:
+        # Use ; "<ITEM>;<ITEM>;<ITEM>" to add more than one item to the fill.
+        material: BLUE_STAINED_GLASS_PANE
+        amount: 1
+        glow: false
+        # This option can be applied to all items.
+        enabled: true
+        # This option can be applied to all items.
+        slot: 36
+        # This option can be applied to all items.
+        mimeslots:
+        - 37
+        - 38
+        - 39
+        - 40
+        - 41
+        - 42
+        - 43
+        - 44
+        # Nbts can be applied to all items in all menus by following this example
+        nbt:
+          string: [
+            ]
+        # Used for CustomModelData options, just add the number. This option can be applied to all items.
+        model: 0
+      fill2:
+        # Use ; "<ITEM>;<ITEM>;<ITEM>" to add more than one item to the fill2.
+        material: GRAY_STAINED_GLASS_PANE
+        amount: 1
+        glow: false
+        # This option can be applied to all items.
+        enabled: true
+        # This option can be applied to all items.
+        slot: 0
+        # This option can be applied to all items.
+        mimeslots:
+        - ALL
+        # Nbts can be applied to all items in all menus by following this example
+        nbt:
+          string: [
+            ]
+        # Used for CustomModelData options, just add the number. This option can be applied to all items.
+        model: 0
+      rewards:
+        clicksound: ''
+        material: FURNACE_MINECART
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+        # This option can be applied to all items.
+        slot: 45
+      current:
+        clicksound: ''
+        material: ENDER_PEARL
+        texture: ''
+        data: 0
+        amount: 1
+        glow: false
+        slot: 0
+        mimeslots:
+        - 9
+        - 18
+        - 27
+        - 28
+        - 29
+        - 20
+        - 11
+        - 2
+        - 3
+        - 4
+        - 13
+        - 22
+        - 31
+        - 32
+        - 33
+        - 24
+        - 15
+        - 6
+        - 7
+        - 8
+        - 17
+        - 26
+        - 35
+      levelup:
+        clicksound: ''
+        material: ENDER_EYE
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+      surprise:
+        clicksound: ''
+        material: CHEST_MINECART
+        texture: ''
+        amount: 1
+        glow: true
+      surprise_collected:
+        clicksound: ''
+        material: HOPPER_MINECART
+        texture: ''
+        amount: 1
+        glow: true
+      previous:
+        clicksound: ''
+        material: ARROW
+        texture: ''
+        amount: 1
+        glow: false
+        slot: 47
+      finallist:
+        clicksound: ''
+        material: BARRIER
+        texture: ''
+        amount: 1
+        glow: true
+      next:
+        clicksound: ''
+        material: ARROW
+        texture: ''
+        amount: 1
+        glow: false
+        slot: 51
+      back:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+        slot: 49
+  levelup_rewards:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    rows: 4
+    pagesize: 27
+    items:
+      fill:
+        material: BLUE_STAINED_GLASS_PANE
+        amount: 1
+        glow: false
+        enabled: true
+        slot: 27
+        mimeslots:
+        - 28
+        - 29
+        - 30
+        - 31
+        - 32
+        - 33
+        - 34
+        - 35
+        nbt:
+          string: [
+            ]
+        model: 0
+      current:
+        clicksound: ''
+        material: PAPER
+        texture: ''
+        data: 0
+        amount: 1
+        glow: false
+      previous:
+        clicksound: ''
+        material: ARROW
+        texture: ''
+        amount: 1
+        glow: false
+        slot: 29
+      next:
+        clicksound: ''
+        material: ARROW
+        texture: ''
+        amount: 1
+        glow: false
+        slot: 33
+      back:
+        clicksound: ''
+        material: IRON_DOOR
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+        slot: 31
+  levelup_confirm:
+    opensound: BLOCK_SLIME_BLOCK_HIT
+    rows: 3
+    items:
+      fill:
+        material: RED_STAINED_GLASS_PANE
+        amount: 1
+        glow: false
+        enabled: true
+        slot: 0
+        mimeslots:
+        - ALL
+        nbt:
+          string: [
+            ]
+        model: 0
+      confirm:
+        clicksound: ''
+        material: DIAMOND_BLOCK
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+        slot: 10
+        mimeslots:
+        - 11
+        - 12
+      cancel:
+        clicksound: ''
+        material: REDSTONE_BLOCK
+        texture: ''
+        data: 0
+        amount: 1
+        glow: true
+        slot: 14
+        mimeslots:
+        - 15
+        - 16
