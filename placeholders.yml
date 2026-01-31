@@ -11,6 +11,7 @@ ECONOMY
 CLAN
 %uclans_hasclan%
 %uclans_hasclan_formated%
+%uclans_hasclan_formated_nocolor%
 %uclans_hasclan_formated_levelsup%
 %uclans_hasclan_formated_levelsub%
 %uclans_global_ff%
