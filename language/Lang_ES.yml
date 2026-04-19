@@ -12,7 +12,7 @@ LANGUAGE:
   error character: '%tag% <red>Contiene caracteres no válidos.'
   error mod desc: '%tag% <red>Error al cambiar la descripción del clan.'
   has globalff: '%tag% <green>El fuego amigo global ya está en marcha!'
-  no permission: '%tag% <redNo tienes permiso'
+  no permission: '%tag% <red>No tienes permiso'
   chest extra buyed update: '%tag% <aqua>{player_other} <green>Ha comprado un nuevo cofre para el clan.'
   currency vault: Money
   currency playerpoints: Points
